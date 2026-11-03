@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,session,jsonify,render_template_string
+from flask import Flask, render_template, request,session,jsonify,render_template_string,redirect
 
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -29,9 +29,10 @@ def vpmc():
     return render_template('./vpmc.html')
 
 # Trang con Mobile
+# Trang chủ mobile đã bỏ, giữ đường dẫn cũ và chuyển thẳng sang bản đồ
 @app.route('/mobile.html', methods=['GET'])
 def mobile():
-    return render_template('./mobile.html')
+    return redirect('/map_mobile.html', code=301)
 
 @app.route('/map_mobile.html', methods=['GET'])
 def map_mobile():
