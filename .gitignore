@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Môi trường ảo và biến môi trường
+venv/
+.venv/
+env/
+.env
+.env.*
+
+# Flask
+instance/
+.webassets-cache
+*.log
+
+# Vercel
+.vercel/
+
+# Công cụ / editor
+.claude/
+.vscode/
+.idea/
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
