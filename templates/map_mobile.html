@@ -1,0 +1,1689 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TFMX9FS');</script>
+    <!-- End Google Tag Manager -->
+    <title>Bản đồ</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./static/images/favicon.ico" type="image/x-icon">
+    <link href="static/css/owl.carousel.css" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preload" href="./static/images/map/map_mobile.png" as="image" type="image/png">
+    <link rel="preload" href="./static/images/home/bg-home.webp" as="image" type="image/png">
+    <link rel="preload" href="./static/images/home/bg-home-mobile.png" as="image" type="image/png">
+    <link rel="preload" href="./static/images/map/icon/btn-back.svg" as="image" type="image/svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2T95TX5VP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X2T95TX5VP');
+    </script>
+
+
+</head>
+<style>
+    body{
+        background-image: none;
+    }
+    #loader{
+        background-size: auto 100vh;
+    }
+    .owl-carousel .owl-item img {
+        border-radius: 15px;
+    }
+    .alCenter {
+        text-align: center;
+    }
+    #loader {
+        position: relative;
+        padding-top: 25vh;
+        left: 0 !important;
+        color: #fff;
+        font-size: 0.76em;
+        width: auto;
+        background: url(/static/images/home/bg-home-mobile.png) no-repeat center bottom;
+    }
+    .loader1 {
+        width: 70vw;
+        margin-left: auto;
+        margin-right: auto;
+        height: 13px;
+        background: white;
+        border-radius: 100px;
+        overflow: hidden;
+    }
+    .loader1 .loader-bar {
+        display: block;
+        height: 100%;
+        background-size: 300% 100%;
+        width: 0;
+        animation: progress-animation 3s normal forwards;
+        background-color: #FA5252;
+    }
+    @keyframes progress-animation {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    #web{
+        background-color: #d4f2f2;
+    
+    }
+    .map, .mapcon {
+        position: absolute;
+        width: 100vw;
+        height: 60%;
+        z-index: 1;
+    }
+    .map{
+        background: url('./static/images/map/map_mobile.png') no-repeat bottom ;
+        background-size: 100vw auto;
+        overflow: hidden;
+    }
+    
+    .content {
+        bottom: -60%;
+        position: relative;
+        width: 100vw;
+        height: 40%;
+        background-color: #b4c6d7;
+        z-index: 2;
+    }
+    .content-top {
+        z-index: 2;
+        overflow: hidden;
+        position: absolute;
+        width: 100vw;
+        top: 82%;
+        height: 18%;
+        display: flex;
+        align-items: center;
+        background: #FFFFFF;
+        box-shadow: 0px -4px 8px rgba(139, 173, 218, 0.05);
+    }
+    .content-bottom{
+        margin-top: 0;
+        position: absolute;
+        width: 100%;
+        height: 82%;
+        background-color: #FCFDFE;
+        box-shadow: 0px -4px 16px rgb(189 189 189 / 25%);
+        overflow: hidden;
+    }
+    .container-content-top {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        grid-template-columns: 18% 18% 18% 18% 18%;
+        grid-column-gap: 0%;
+        text-align: center;
+        align-items: center;
+    }
+    .circle-content{
+        width: 50%;
+        height: auto;
+    }
+    .circle-content svg{
+        margin:auto;
+        width: 20px;
+        height: 20px;
+    }
+    .title-content-bottom{
+        margin-top: 5%;
+        text-align: center;
+        position: relative;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        align-items: center;
+        color: #283352;
+        margin-bottom: 8px;
+    }
+    .parent-menu-content{
+        width: 100%;
+        height: 80%;
+        overflow-x: auto;
+    }
+    .menu-content-bottom {
+        width: 100%;
+        height: 45px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .container-menu-bottom{
+        margin-left: 24px;
+        margin-right: 24px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto 20px;
+    }
+    .text-container-menu{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        color: #283352;
+    }
+    .line-menu{
+        margin-left: 24px;
+        margin-right: 24px;
+        width: auto;
+        height: 2px;
+        display: grid;
+        grid-template-columns: 16px auto 32px ;
+        grid-column-gap:4px;
+        background-color:#E4E9F2;
+    }
+    .title-floor {
+        width: auto;
+        display: grid;
+        margin-left: 16px;
+        margin-right: 16px;
+        height: auto;
+        grid-template-columns: 24px auto 32px;
+        padding-left: 0;
+        padding-bottom: 8px;
+    }
+    .description-floor{
+        margin-left: 16px;
+        margin-right: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        color: #39476A;
+        overflow-x: auto;
+        text-align: justify;
+    }
+    .descrip-content{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        color: #283352;
+    }
+    .current-circle{
+        background: #FFFFFF;
+    }
+    .current-circle svg{
+        fill:#E23C47;
+    }
+    .trangcon{
+        display: none;
+    }
+    .tintuc{
+        display: none;
+    }
+    .slider-tintuc {
+        position: relative;
+        display:flex;
+        width: 100%;
+        height: 100px;
+        background-color: aquamarine;
+    }
+    .child-tintuc{
+        height: 100px;
+        width: 50px;
+        background-color: gray;
+    }
+    .item {
+        background-color: antiquewhite;
+        height: 100px;
+        filter: drop-shadow(0px 8px 8px rgba(200, 220, 250, 0.1));
+        border-radius: 8px;
+    }
+    
+    .owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
+        background:  #EC838A;
+    }
+    .owl-nav.disabled+.owl-dots {
+        margin-top: 24px;
+    }
+    .owl-dots .owl-dot span {
+        background: #E4E9F2;
+    }
+    .modal-dialog {
+        margin:0;
+    }
+    .modal-content {
+        border: 0 ;
+    }
+    .header_back {
+        position: relative;
+        height: 70px;
+        align-items: center;
+        margin-left: 16px;
+        margin-right: 16px;
+        padding-top:24px;
+        display: grid;
+        grid-template-columns: 40px auto 40px;
+        grid-template-rows: 40px;
+    }
+    .icon_back{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .icon-search-header{
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        z-index: 21;
+    }
+    .icon-search-header img{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .end-content{
+        margin-bottom: 30px;
+    }
+    .over {
+        position: absolute;
+        left: 0;
+        bottom:0;
+        cursor: pointer;
+    }
+    .over .effect {
+        display: none;
+        position: relative;
+        z-index: 1;
+    }
+    .over .effect span {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 4px #fff solid;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        animation: 2s infinite aniWave;
+        margin-top: -25px;
+        margin-left: 5px;
+    }
+    .over .effect span:last-child {
+        animation-delay: 0.3s;
+    }
+    .over .pop {
+        position: absolute;
+        transform: scale(0);
+        margin-top: -96px;
+        margin-left: -20px;
+        transition: all .2s;
+        -moz-transition: all .2s;
+        -webkit-transition: all .2s;
+    }
+    .over .pop.active {
+        transform: scale(1);
+    }
+    .over:hover .pop {
+        transform: scale(1.1);
+    }
+    .pop img {
+        height: 64px;
+    }
+    .people {
+        z-index: 14;
+    }
+    .over:hover .typewriter {
+        display: block;
+    }
+     .people:hover,
+     .people.active {
+        z-index: 16;
+    }
+    #floor-a1 {
+        margin-left: 45vw;
+        margin-bottom: 17.5vw;
+    }
+    #floor-a2 {
+        margin-left: 82vw;
+        margin-bottom: 50.5vw;
+    }
+    #floor-a3 {
+        margin-left: 72vw;
+        margin-bottom: 67.5vw;
+    }
+    #floor-vpmc {
+        margin-left: 85vw;
+        margin-bottom: 2.5vw;
+    }
+    #floor-hta1 {
+        margin-left: 27vw;
+        margin-bottom: 34.5vw;
+    }
+    #floor-hta2 {
+        margin-left: 53vw;
+        margin-bottom: 31.5vw;
+    }
+    #floor-canteen {
+        margin-left: 53vw;
+        margin-bottom: 63.5vw;
+    }
+    #floor-ktxb5 {
+        margin-left: 18vw;
+        margin-bottom: 54.5vw;
+    }
+    #floor-ttkn{
+        margin-left: 47vw;
+        margin-bottom: 74.5vw;
+    }
+    .input-search-header,.input-search-header input{
+        height: 40px;
+        width: 108%;
+        z-index: 20;
+    }
+    .search_recommend{
+        display: none;
+        background-color: #FFFFFF;
+        position: absolute;
+        margin-left: 4.8vw;
+        width: 90.4vw;
+        margin-right: 4.8vw;
+        max-height: 40vh;
+        overflow: auto;
+        border-radius: 0px 0px 16px 16px;
+    }
+    .recommend_text{
+        background-color: #F3F5F9;
+        border-radius: 10px;
+    }
+    .black-background{
+        width: 100vw;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        opacity: 0;
+        display: block;
+    }
+    #result{
+        z-index: 20;
+    }
+    .text_back{
+        margin-left: 4.8vw;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: #39476A;
+        margin-top: -1vw;
+    }
+    .content-place{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 32px;
+        border-radius: 16px 16px 0px 0px;
+        outline: none;
+    }
+    #input_search{
+        border:none;
+        width: 80%;
+        margin-left: 4vw;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        outline: none;
+    }
+    .recommend_content{
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-left: 30px;
+        margin-right: 30px;
+        display: flex;
+    }
+    
+    .content-text{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 15px;
+        margin-left:6px;
+        margin-right: 6px;
+        background: #F3F5F9;
+        border-radius: 100px;
+        height: 36px;
+    }
+    .content-text:hover{
+        color: #E23C47;
+    }
+    .recommend_text{
+        cursor: pointer;
+        text-align: center;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+    .prlx-ctn .over:hover .typewriter1 {
+        display: block;
+    }
+    
+    .typewriter1 {
+        margin-top: -130px;
+        position: absolute;
+        background: rgba(255,255,255,1);
+        padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        transform: translate(-50%, -50%);
+    }
+    .typewriter1:before {
+        content: "";
+        position: absolute;
+        left: 48%;
+        bottom: -8px;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-top: 8px solid rgba(255, 255, 255, 1);
+        border-right: 5px solid transparent;
+        box-shadow: 0px 8px 16px rgba(130, 136, 160, 0.1);
+    }
+    .typewriter1 h6 {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        color: #101426;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: auto;
+        transition: all .2s;
+        -moz-transition: all .2s;
+        -webkit-transition: all .2s;
+    }
+    .typewriter1.active {
+        display: block;
+    }
+    
+    .typewriter1.active h6 {
+        animation: typing 1s steps(40, end);
+    }
+    .title-menu{
+        font-size: 12px;
+        line-height: 16px;
+        color: #7988A4;
+    }
+    #floor-ttkn .typewriter1::before{
+        top:-8px;
+        bottom: 0;
+    }
+    </style>
+<body style="overflow: hidden;">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFMX9FS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <!------------------------ Loading ----------------------------->
+  <div id="loader" class="alCenter" style="display: block;margin: 0;width: 100vw;">
+    <p>
+        <img src="./static/images/map/logo.webp" width="95px" height="120px" alt="">
+    </p>
+    <p style="font-family: Roboto;font-style: normal;font-weight: 500;font-size: 18px;
+    line-height: 26px;margin-top: 20px;margin-bottom: 20px;
+    color: #283352;">Chào mừng bạn đến với<br> Học viện Công nghệ Bưu chính Viễn thông</p>
+    <p>
+        <div class="bar-container">
+            <div class="loader1">
+                <span class="loader-bar"></span>
+           </div>
+        </div>
+    </p>
+      <p style="margin-top:20px;font-size: 14px;line-height: 20px;text-align: center;color: #39476A;">Đang tải dữ liệu...</p>
+  </div>
+
+  <!------------------- Frame Search------------------------------- -->
+        <div class="modal-content" id="modal_search" style="width:100%;height:100%;overflow: hidden;display: none;background-color: #F3F5F9;margin: 0;">
+           <div class="header_back">
+              <div class="icon_back">
+                <img id="btn-close-search"  src="./static/images/home/home-btn-back.svg" alt="back" width="24px" height="24px">
+              </div>
+              <div class="text_back">Tìm kiếm</div>
+           </div>
+           <div class="content-place" style="background-color: white;height: 16vw;margin-right: 4vw;">
+            <svg style="margin-left:4vw" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.9666 19.7002L19.6999 16.4335C20.7499 14.8002 21.3333 12.9335 21.3333 10.8335C21.3333 5.00016 16.6666 0.333496 10.8333 0.333496C4.99992 0.333496 0.333252 5.00016 0.333252 10.8335C0.333252 16.6668 4.99992 21.3335 10.8333 21.3335C12.9333 21.3335 14.7999 20.7502 16.4333 19.7002L19.6999 22.9668C20.6333 23.9002 22.0333 23.9002 22.9666 22.9668C23.8999 22.0335 23.8999 20.6335 22.9666 19.7002ZM10.8333 19.0002C6.28325 19.0002 2.66659 15.3835 2.66659 10.8335C2.66659 6.2835 6.28325 2.66683 10.8333 2.66683C15.3833 2.66683 18.9999 6.2835 18.9999 10.8335C18.9999 15.3835 15.3833 19.0002 10.8333 19.0002Z" fill="url(#paint0_linear)"/>
+              <path d="M14.3332 7.3335H7.33317C6.63317 7.3335 6.1665 7.91683 6.1665 8.50016C6.1665 9.20016 6.63317 9.66683 7.33317 9.66683H14.3332C15.0332 9.66683 15.4998 9.20016 15.4998 8.50016C15.4998 7.91683 15.0332 7.3335 14.3332 7.3335Z" fill="url(#paint1_linear)"/>
+              <path d="M10.8332 12H7.33317C6.63317 12 6.1665 12.4667 6.1665 13.1667C6.1665 13.8667 6.63317 14.3333 7.33317 14.3333H10.8332C11.5332 14.3333 11.9998 13.8667 11.9998 13.1667C11.9998 12.5833 11.5332 12 10.8332 12Z" fill="url(#paint2_linear)"/>
+              <defs>
+              <linearGradient id="paint0_linear" x1="11.9999" y1="0.333496" x2="11.9999" y2="23.6668" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF8989"/>
+              <stop offset="1" stop-color="#FA5252"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear" x1="10.8332" y1="7.3335" x2="10.8332" y2="9.66683" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF8989"/>
+              <stop offset="1" stop-color="#FA5252"/>
+              </linearGradient>
+              <linearGradient id="paint2_linear" x1="9.08317" y1="12" x2="9.08317" y2="14.3333" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF8989"/>
+              <stop offset="1" stop-color="#FA5252"/>
+              </linearGradient>
+              </defs>
+              </svg>                  
+            <input 
+                type="text" id="input_search"
+                placeholder="Tìm địa chỉ phòng ban, khoa" 
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Tìm địa chỉ phòng ban, khoa'" autofocus />
+          
+         </div>
+         <div id="under_search1"style="height: 1px;background: #E4E9F2;margin-left: 4.8vw;margin-right: 4.8vw;"></div>
+         <div class="search_recommend" id="result">
+            <div class="recommend_content" style="margin-top:12px">
+              <div class="content-text 1 a2 tang9 khoa_cntt1" onclick="myFunction(this)">     
+                  <div class="recommend_text ">Khoa Công nghệ thông tin</div> 
+              </div>
+            </div>
+            <div class="recommend_content">
+              <div class="content-text 1 a1 tang1 phong_gv" onclick="myFunction(this)">
+                  <div class="recommend_text">Phòng Giáo Vụ</div>
+              </div>
+            </div>
+            <div class="recommend_content">
+              <div class="content-text 1 a1 tang1 khoa_dpt" onclick="myFunction(this)">            
+                <div class="recommend_text" >Khoa Đa phương tiện</div> 
+              </div>
+            </div>
+          </div>      
+          <div class="black-bg" style="width:100vw;height:100vh;overflow:hidden;z-index: 1;"></div>
+      </div>
+
+  <!-- -----------------------Web -------------------------------->
+  <div id="web" style="display: none;z-index:1000;overflow: hidden;width: 100%;height: 100%; "> 
+    <!-------------------- Map Mobile ------------------------->
+    <div class="map">
+        <div class="header_back">
+            <div class="icon_back"></div>
+            <div></div>
+            <div class="icon-search-header">
+                <img src="./static/images/home/btn-search.svg" alt="" width="24px" height="24px">
+            </div>
+        </div>
+        <div class="black-background"></div>
+        <div class="over people btnFile" id="floor-a1" >
+            <div class="typewriter">
+                <h6>Tòa nhà A1</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+        <div class="over people btnFile" id="floor-a2" >
+            <div class="typewriter">
+                <h6>Tòa nhà A2</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+        <div class="over people btnFile" id="floor-a3" >
+            <div class="typewriter">
+                <h6>Tòa nhà A3</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+        <div class="over people btnFile" id="floor-vpmc" >
+            <div class="typewriter" style="margin-left: -24px;">
+                <h6>Văn phòng một cửa</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+        <div class="over people btnFile" id="floor-hta1">
+            <div class="typewriter">
+                <h6>Hội trường A1</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+        <div class="over people btnFile" id="floor-hta2">
+            <div class="typewriter">
+                <h6>Hội trường A2</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+        <div class="over people btnFile" id="floor-canteen" >
+            <div class="typewriter">
+                <h6>Căn tin</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+        <div class="over people btnFile" id="floor-ktxb5">
+            <div class="typewriter">
+                <h6>Kí túc xá B5</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+        <div class="over people btnFile" id="floor-ttkn">
+            <div class="typewriter">
+                <h6>Trung tâm khởi nghiệp</h6>
+            </div>
+            <div class="pop">
+                <img src="./static/images/map/icon_place.svg">
+            </div>
+            <div class="effect" style="display: none;">
+                <span></span><span></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ----------------------Nội dung---------------------------- -->
+    <div class="content">
+
+        <!---------------------------- Tham quan --------------------->
+        <div class="content-bottom content-map thamquan" >
+            <div class="title-content-bottom main-menu ">Tham quan</div>
+            <div class="parent-menu-content main-menu">
+                <div class="menu-content-bottom menu-map" id="a1">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Tòa nhà A1</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map " id="a2">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Tòa nhà A2</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="a3">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Tòa nhà A3</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="vpmc">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Văn phòng một cửa</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="hta1">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Hội trường A1</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="hta2">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Hội trường A2</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="canteen">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Căn tin Học viện</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="ktxb5">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Kí túc xá B5</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu end-content"></div>
+
+            </div>
+        </div>
+        <!------------------------Khối phòng ban --------------------->
+        <div class="content-bottom content-map trangcon khoiphongban" >
+            <div class="title-content-bottom main-menu ">Khối phòng ban</div>
+            <div class="parent-menu-content main-menu">
+                <div class="menu-content-bottom menu-map" id="phong_dt">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Phòng Đào tạo</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="phong_ctctsv">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Phòng chính trị & CTSV</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="khoa_qtdtsdh">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa Đào tạo sau Đại học</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="phong_tckt">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Phòng Tài chính Kế toán</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="phong_qlkhcn">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Phòng Quản lý KHCN & HTQT </div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="phong_khdt">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Phòng Kế hoạch đầu tư </div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="phong_tccbld">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Phòng Tổ chức Cán bộ Lao động </div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="ttkt">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Trung tâm Khảo thí và Đảm bảo CLGD </div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="tttnth">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Trung tâm Thí nghiệm Thực hành </div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="ttdtqt">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Trung tâm Đào tạo Quốc tế </div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="ttdv">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Trung tâm Dịch vụ </div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="ttkn" >
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">TT KN và đổi mới sáng tạo</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu end-content"></div>
+
+            </div>
+        </div>
+        <!----------------- Khối đào tạo nghiên cứu------------------ -->
+        <div class="content-bottom content-map trangcon khoidaotao" >
+            <div class="title-content-bottom main-menu ">Khối Đào tạo – Nghiên cứu</div>
+            <div class="parent-menu-content main-menu">
+                <div class="menu-content-bottom menu-map" id="khoa_cb1">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa Cơ bản 1</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="khoa_cntt1">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa Công nghệ thông tin 1</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="khoa_vt1">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa Viễn thông 1</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="khoa_ktdt1">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa Kỹ thuật Điện tử 1</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="khoa_qtkd1">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa quản trị kinh doanh 1</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="khoa_tckt">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa Tài chính kế toán</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="khoa_dpt">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa Đa phương tiện</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="marketing">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Khoa Marketing</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="cdit">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Viện CNTT – Truyền thông</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="ttdt">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">TT Đào tạo Bưu chính Viễn thông 1</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu end-content"></div>
+
+            </div>
+        </div>
+        <!-------------------------Tiện tích sinh viên --------------------->
+        <div class="content-bottom content-map trangcon tienichsv" >
+            <div class="title-content-bottom main-menu ">Tiện ích Sinh viên</div>
+            <div class="parent-menu-content main-menu">
+                <div class="menu-content-bottom menu-map" id="vpclb">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Văn phòng các CLB</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="vpd">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Văn phòng đoàn</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="canteen1">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Canteen</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu"></div>
+                <div class="menu-content-bottom menu-map" id="tttttv">
+                    <div class="container-menu-bottom">
+                        <div class="text-container-menu">Trung tâm Thông tin Thư viện</div>
+                        <img src="./static/images/map/icon/btn-next.svg" alt="">
+                    </div>
+                </div>
+                <div class="line-menu end-content"></div>
+
+            </div>
+        </div>
+        <!---------------- -------Tin tức-------------------- -->
+        <div class="content-bottom content-map trangcon tintuc" >
+            <div class="title-content-bottom main-menu ">Tin Tức</div>
+            <div  class="parent-menu-content">
+                <div class="description-floor" style="margin-top:8px;">
+                    <div id="demos" >
+                        <div class="owl-carousel owl-theme">
+                            <div class="item">
+                                <a href="https://portal.ptit.edu.vn/thong-bao-ve-viec-tiep-tuc-tang-cuong-trien-khai-cac-bien-phap-phong-chong-dich-covid-19-2/">
+                                    <img src="./static/images/map/slider1.png" alt="">
+                                </a>
+                            </div>
+                            <!-- <div class="item">
+                                <a href="https://portal.ptit.edu.vn/thong-bao-ve-viec-tiep-tuc-tang-cuong-trien-khai-cac-bien-phap-phong-chong-dich-covid-19-2/">
+                                    <img src="./static/images/map/slider2.png" alt="">
+                                </a>
+                            </div> -->
+                            <div class="item">
+                                <a href="https://portal.ptit.edu.vn/thong-bao-ve-viec-tiep-tuc-tang-cuong-trien-khai-cac-bien-phap-phong-chong-dich-covid-19-2/">
+                                    <img src="./static/images/map/slider3.png" alt="">
+                                </a>
+                            </div>                    
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+
+        <!---------------- Trang con tham quan----------- -->
+            <div class="content-bottom content-map trangcon a2" >
+                <div class="title-content-bottom title-floor"> 
+                    <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt="">
+                    <div class="descrip-content">
+                        Toà nhà A2
+                    </div>
+                    <img class="next-btn-map a2" src="./static/images/map/icon/next-in-map.svg" alt="">
+                </div>
+                <div  class="parent-menu-content">
+                    <div class="description-floor end-content">
+                                                Khu vực các phòng học<br>
+                        Tầng G: TT KT&ĐBCGD; P. KHĐT; TT DV; <br>
+                        Tầng 9; 10: Văn phòng các Khoa, Bộ môn và Khoa ĐTSĐH)
+                    </div>
+                </div>
+            </div>
+            <div class="content-bottom content-map trangcon a1" >
+                <div class="title-content-bottom title-floor"> 
+                    <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt="">
+                    <div class="descrip-content">
+                        Toà nhà A1
+                    </div>
+                    <img class="next-btn-map a1" src="./static/images/map/icon/next-in-map.svg" alt="">
+                </div>
+                <div  class="parent-menu-content">
+                    <div class="description-floor end-content">
+                        Khu vực  làm việc của LĐHV,  phòng GV, CT&CTSV và các Viện/Phòng/ Trung tâm chức năng, Khoa Đa phương tiện, Phòng Lab, Studio
+                    </div>
+                </div>
+            </div>
+            <div class="content-bottom content-map trangcon a3" >
+                <div class="title-content-bottom title-floor"> 
+                    <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt="">
+                    <div class="descrip-content">
+                        Toà nhà A3
+                    </div>
+                    <img class="next-btn-map a3" src="./static/images/map/icon/next-in-map.svg" alt="">
+                </div>
+                <div  class="parent-menu-content">
+                    <div class="description-floor end-content">
+                        Khu vực các phòng học, phòng thí nghiệm, thực hành, Trung tâm TTTV
+                    </div>
+                </div>
+            </div>
+            <div class="content-bottom content-map trangcon vpmc" >
+                <div class="title-content-bottom title-floor"> 
+                    <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt="">
+                    <div class="descrip-content">
+                        Văn phòng một cửa
+                    </div>
+                    <img class="next-btn-map vpmc" src="./static/images/map/icon/next-in-map.svg" alt="">
+                </div>
+                <div  class="parent-menu-content">
+                    <div class="description-floor end-content">
+                        Học viện Công nghệ Bưu chính Viễn thông tổ chức, bố trí Bộ phận “một cửa” để tiếp, làm việc với thí sinh, sinh viên (HSSV) theo “cơ chế một cửa”.
+                    </div>
+                </div>
+            </div>
+            <div class="content-bottom content-map trangcon hta1"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Hội trường A1</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">
+                Nơi diễn ra các hoạt động Hội thảo, các buổi Lễ của Học viện, của các Khoa, ĐTN và Sinh nhật các CLB… Với sức chứa 200-300 người, có đầy đủ điều hòa, âm thanh, ánh sang hiện đại.
+            </div></div></div>
+            <div class="content-bottom content-map trangcon hta2"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Hội trường A2</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">
+                Hội trường A2-PTIT với sân khấu hiện đại, màn hình Led siêu xịn xò với sức chứa từ 700-1.200 người; là nơi diễn ra các sự kiện: Lễ, Hội nghị, Cuộc thi có quy mô lớn của Thầy và Trò Học viện
+            </div></div></div>
+            <div class="content-bottom content-map trangcon ktxb5"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Ký túc xá B5 </div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">
+                Đây là một điểm vô cùng đáng quan tâm dành cho các bạn tân sinh viên khi mới vào trường và chưa có chỗ ở. Trường có khu kí túc xá đáp ứng nhu cầu sinh hoạt của các bạn sinh viên cần tìm chỗ trọ. Kí túc xá của nhà trường có rất nhiều tiện ích như trong kí túc xá có lắp đặt hệ thống wifi trả trước, điện nước được nhà trường hỗ trợ mà chi phí để ở kí túc xá cũng vô cùng “nhẹ nhàng” chỉ 180k/tháng. Bạn không thể tìm ở ngoài phòng trọ có mức giá như vậy đâu.                
+                </div></div></div>
+
+        <!---------------- Trang con Tiện ích sinh viên----------- -->
+        <div class="content-bottom content-map trangcon canteen canteen1" >
+            <div class="title-content-bottom title-floor"> 
+                <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt="">
+                <div class="descrip-content">
+                    Canteen Học viện
+                </div>
+                <div></div>
+            </div>
+            <div  class="parent-menu-content">
+                <div class="description-floor end-content">
+                    Canteen Học viện là nơi dành cho các bạn tụ họp, nạp năng lượng sau những giờ học căng thẳng bằng những món ăn, thức uống tươi ngon, bổ dưỡng với giá cả dành cho Sinh viên. Đặc biệt, không gian tại canteen của PTIT còn là địa điểm các bạn hay sử dụng để họp hành, chém gió…vô cùng vui vẻ nhé!
+                </div>
+            </div>
+        </div>
+        <div class="content-bottom content-map trangcon vpd" >
+            <div class="title-content-bottom title-floor"> 
+                <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt="">
+                <div class="descrip-content">
+                    Văn phòng đoàn
+                </div>
+                <div></div>
+            </div>
+            <div  class="parent-menu-content">
+                <div class="description-floor end-content">
+                    Đoàn Thanh niên Học viện là đơn vị trực thuộc Đoàn Thanh niên Học viện CNBCVT
+                    Thông qua hoạt động của đơn vị, góp phần thực hiện nhiệm vụ hỗ trợ Học viện giải quyết các công việc đoàn vụ hằng ngày; là cầu nối hoạt động giữa Văn phòng Đoàn thanh niên với các đơn vị: Hội sinh viên, các LCĐ và các CLB, Tổ, Đội, Nhóm...                </div>
+            </div>
+        </div>
+        <div class="content-bottom content-map trangcon tttttv"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Trung tâm thông tin thư viện</div><div><img class="next-to-floor 1 a3 tang1 tttttv" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">
+            Chức năng và nhiệm vụ: Trung tâm có chức năng quản lý chuyên môn, nghiệp vụ về thông tin – thư viện trong toàn Học viện; tổ chức và quản lý công tác thông tin – thư viện phục vụ hoạt động đào tạo và nghiên cứu khoa học tại Cơ sở Hà Đông.
+        </div></div></div>
+
+        <div class="content-bottom content-map trangcon phong_dt"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Phòng Đào tạo</div><div><img class="next-to-floor 1 a1 tang2 phong_dt" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content"> Vị trí: Tầng 2 nhà A1, Phòng đào tạo có chức năng tổ chức, quản lý, điều hành công tác mở  ngành đào tạo...</div></div></div>
+        <div class="content-bottom content-map trangcon phong_ctctsv"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Phòng chính trị & CTSV</div><div><img class="next-to-floor 1 a1 tang1 phong_ctctsv" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Vị trí: Tầng 1 nhà A1, Phòng chính trị & CTSV có chức năng tổ chức triển khai thực hiện, giám sát, kiểm tra, tổng hợp, đánh giá kết quả, tình hình hoạt động của các mặt công tác nêu trên theo nhiệm vụ được giao. </div></div></div>
+        <div class="content-bottom content-map trangcon khoa_qtdtsdh"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa Đào tạo sau Đại học</div><div><img class="next-to-floor 1 a2 tang10 khoa_qtdtsdh" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Vị trí: Tầng 10 nhà A2, Khoa QT&ĐTSĐH có chức năng tổ chức đào tạo sau đại học cấp thạc sĩ và tiến sĩ.</div></div></div>
+        <div class="content-bottom content-map trangcon phong_tckt"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Phòng Tài chính Kế toán</div><div><img class="next-to-floor 1 a2 tang10 khoa_tckt" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Vị trí: Tầng 1 nhà A1, Phòng Tài chính kế toán thực hiện thu học phí, lệ phí và các khoản thu khác;  thanh toán các khoản chi theo chế độ quy định. </div></div></div>
+        <div class="content-bottom content-map trangcon phong_qlkhcn"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Phòng Quản lý KHCN & HTQT</div><div><img class="next-to-floor 1 a1 tang2 phong_qlkhcn" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Vị trí: Tầng 2 nhà A1, Phòng Quản lý Khoa học công nghệ & HTQT có chức năng tổ chức triển khai thực hiện, giám sát, kiểm tra, tổng hợp, đánh giá hoạt động khoa học công nghệ và hợp tác quốc tế theo nhiệm vụ được giao. </div></div></div>
+        <div class="content-bottom content-map trangcon phong_khdt"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Phòng Kế hoạch đầu tư </div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Phòng Kế hoạch đầu tư là nơi … </div></div></div>
+        <div class="content-bottom content-map trangcon phong_tccbld"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Phòng Tổ chức Cán bộ Lao động </div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Phòng Tổ chức Cán bộ Lao động là nơi … </div></div></div>
+        <div class="content-bottom content-map trangcon ttkt"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Trung tâm Khảo thí và Đảm bảo CLGD</div><div><img class="next-to-floor 1 a2 tangg ttkt" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Vị trí: Tầng G nhà A2, Trung tâm có chức năng tổ chức, triển khai công tác thi, kiểm tra và đánh giá kết quả học tập của sinh viên (đối với các hệ, các khoá đào tạo được Học viện giao) tại Cơ sở Hà Đông và đảm bảo các điều kiện đảm bảo chất lượng các hệ đào tạo của Học viện.</div></div></div>
+        <div class="content-bottom content-map trangcon tttnth"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Trung tâm Thí nghiệm Thực hành</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Trung tâm Thí nghiệm Thực hành là nơi … </div></div></div>
+        <div class="content-bottom content-map trangcon ttdtqt"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Trung tâm Đào tạo Quốc tế</div><div><img class="next-to-floor 1 a1 tang5 ttdtqt" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Vị trí: Tầng 5 nhà A1, Trung tâm có chức năng phát triển, tổ chức và quản lý các hoạt động, các chương trình về đào tạo quốc tế</div></div></div>
+        <div class="content-bottom content-map trangcon ttdv"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Trung tâm Dịch vụ</div><div><img class="next-to-floor 1 a2 tangg ttdv" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Vị trí: Tầng G nhà A2, Trung tâm có chức năng tổ chức, quản lý,  thực hiện các hoạt động dịch vụ, phục vụ cho các hoạt động của Học viện tại Cơ sở đào tạo phía Bắc của Học viện Công nghệ Bưu chính Viễn thông. </div></div></div>
+        <div class="content-bottom content-map trangcon ttkn">
+            <div class="title-content-bottom title-floor"> 
+                <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt="">
+                <div class="descrip-content">
+                    TT khởi nghiệp và đổi mới sáng tạo
+                </div>
+                <div></div>
+            </div>
+            <div  class="parent-menu-content">
+                <div class="description-floor end-content" >         
+                    Trung tâm Đổi mới Sáng tạo và Khởi nghiệp là một tổ chức thuộc Học viện Công nghệ Bưu chính Viễn thông bao gồm các nhà khoa học, các giảng viên, nghiên cứu viên trong, ngoài Học viện và các chuyên gia nước ngoài. Nghiên cứu phát triển sản phẩm khởi nghiệp đổi mới sáng tạo có tính ứng dụng cao. Chủ động đăng ký bản quyền và chuyển giao kết quả, sản phẩm khởi nghiệp đổi mới sáng tạo của Trung tâm theo các quy định hiện hành.
+                </div>
+            </div>
+        </div>
+        <!-- Khối đào tạo -->
+        <div class="content-bottom content-map trangcon khoa_cb1"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa Cơ bản 1</div><div>
+            <img class="next-to-floor 1 a2 tang10 khoa_cb1" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;">
+        </div></div><div  class="parent-menu-content"><div class="description-floor end-content">Khoa Cơ bản 1 là đơn vị đào tạo trực thuộc Học viện, có chức năng đào tạo và nghiên cứu khoa học thuộc lĩnh vực khoa học cơ bản, Ngoại ngữ và Giáo dục thể chất – Quốc phòng.</div></div></div>
+        <div class="content-bottom content-map trangcon khoa_cntt1"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa Công nghệ thông tin 1</div><div><img class="next-to-floor 1 a2 tang9 khoa_cntt1" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Khoa Công nghệ thông tin 1 là đơn vị đào tạo trực thuộc Học viện, có chức năng đào tạo và nghiên cứu khoa học thuộc lĩnh vực Công nghệ thông tin </div></div></div>
+        <div class="content-bottom content-map trangcon khoa_vt1"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa Viễn thông 1</div><div><img class="next-to-floor 1 a2 tang10 khoa_vt1" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Khoa Viễn thông 1 là đơn vị đào tạo trực thuộc Học viện, có chức năng đào tạo và nghiên cứu khoa học thuộc lĩnh vực điện tử truyền thông.</div></div></div>      
+        <div class="content-bottom content-map trangcon khoa_ktdt1"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa Kỹ thuật Điện tử 1</div><div><img class="next-to-floor 1 a2 tang9 khoa_ktdt1" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Khoa Kỹ thuật Điện tử 1 là đơn vị đào tạo trực thuộc Học viện, có chức năng đào tạo và nghiên cứu khoa học thuộc lĩnh vực Điện – Điện tử. </div></div></div>      
+        <div class="content-bottom content-map trangcon khoa_qtkd1"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa quản trị kinh doanh 1</div><div><img class="next-to-floor 1 a2 tang9 khoa_qtkd1" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Khoa Quản trị kinh doanh 1 là đơn vị đào tạo trực thuộc Học viện, có chức năng đào tạo và nghiên cứu khoa học thuộc lĩnh vực quản trị kinh doanh. </div></div></div>
+        <div class="content-bottom content-map trangcon khoa_tckt"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa Tài chính kế toán</div><div><img class="next-to-floor 1 a2 tang10 khoa_tckt" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Khoa Tài chính Kế toán 1 là đơn vị đào tạo trực thuộc Học viện, có chức năng đào tạo và nghiên cứu khoa học thuộc lĩnh vực tài chính, kế toán, kiểm toán.</div></div></div>
+        <div class="content-bottom content-map trangcon khoa_dpt"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa Đa phương tiện</div><div><img class="next-to-floor 1 a1 tang1 khoa_dpt" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Khoa Đa Phương tiện có chức năng đào tạo và nghiên cứu khoa học các chuyên ngành Công nghệ Đa phương tiện và Truyền thông Đa phương tiện.</div></div></div>
+        <div class="content-bottom content-map trangcon marketing"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Khoa Marketing</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Khoa Marketing là nơi … </div></div></div>
+        <div class="content-bottom content-map trangcon cdit"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Viện Công nghệ Thông tin – Truyền thông</div><div><img class="next-to-floor 1 a1 tang3 cdit" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">CDIT có chức năng nghiên cứu, ứng dụng các thành tựu khoa học công nghệ vào các sản phẩm, dịch vụ và chương trình đào tạo nhằm góp phần thúc đẩy sự phát triển của đất nước.</div></div></div>
+        <div class="content-bottom content-map trangcon ttdt"><div class="title-content-bottom title-floor"> <img  class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Trung tâm Đào tạo Bưu chính Viễn thông 1</div><div><img class="next-to-floor 1 a1 tang4 ttdt" src="./static/images/map/icon/next-in-map.svg" alt="" style="display: block;"></div></div><div  class="parent-menu-content"><div class="description-floor end-content">
+            <ul>Chức năng và nhiệm vụ chính của Trung tâm bao gồm:
+                <li>Tổ chức đào tạo từ xa cho tất cả các cấp học;</li>
+                <li>Tổ chức các khoá đào tạo quốc tế; </li>
+                <li> Thực hiện các dự án hợp tác quốc tế</li>
+            </ul>
+        </div></div></div>        
+        
+        <div class="content-bottom content-map trangcon photo"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Dịch vụ Photo</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Dịch vụ Photo là nơi … </div></div></div>    
+        <div class="content-bottom content-map trangcon bongchuyen"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Sân bóng chuyền</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Sân bóng chuyền là nơi … </div></div></div>
+        <div class="content-bottom content-map trangcon bongda"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Sân bóng đá</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Sân bóng đá là nơi … </div></div></div>  
+        <div class="content-bottom content-map trangcon santheduc"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Sân tập thể dục</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Sân tập thể dục là nơi … </div></div></div>
+        <div class="content-bottom content-map trangcon muondo"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Mượn đồ dùng học tập</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">Mượn đồ dùng học tập là nơi … </div></div></div>
+        <div class="content-bottom content-map trangcon vpclb"><div class="title-content-bottom title-floor"> <img class="back-btn-map" src="./static/images/map/icon/btn-back.svg" alt=""> <div class="descrip-content">Văn phòng các CLB</div><div></div></div><div  class="parent-menu-content"><div class="description-floor end-content">
+            <div class="list_clb">
+                <ul class="contain_type_clb">
+                    <li class="type_clb"> I. HỌC THUẬT: </li>
+                    <ul>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/clbmultimediaptit">1. CLB Multimedia</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/ITPTIT">2. CLB IT - ITPTIT</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/clubproptit">3. CLB Lập trình - CLB ProPTIT</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/ClbASCPTIT">4. CLB Kế toán - CLB ASC</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/elfsclubptit">5. CLB Tiếng Anh - CLB ELFs</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/ATTT.PTIT">6. CLB An toàn thông tin - CLB ISP</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/CLBDienTuPTIT"> 7. CLB Điện tử PTIT - CLB EIE</a></li>
+                    </ul>
+                </ul>
+                <ul class="contain_type_clb">
+                    <li class="type_clb">II. HOẠT ĐỘNG XÃ HỘI - CỘNG ĐỒNG: </li>
+                    <ul>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/CLBSVTNPTIT">1. CLB Sinh Viên Tình Nguyện</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/PtitQuayTitDaQuayLaTit">2. Đội máu PTIT</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/dcdptit">3. Đội Cờ đỏ</a></li>
+                    </ul>
+                </ul>
+                <ul class="contain_type_clb">
+                    <li class="type_clb">III. TRUYỀN THÔNG - SỰ KIỆN: </li>
+                    <ul>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/CDAclub">1. CDA - CLB những nhà quản trị năng động sáng tạo.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/S4C.club">2. S4C - CLB Truyền thông & Kỹ năng mềm.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/somedia.vn.2016">3. Sổ Media (CLB về chụp ảnh cũng như quay dựng media)</a></li>
+                    </ul>
+                </ul>
+                <ul class="contain_type_clb">
+                    <li class="type_clb">IV. THỂ THAO: </li>
+                    <ul>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/bongdabuuchinh">1. CLB Bóng đá.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/BB.PTIT.CLUB">2. CLB Bóng rổ.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/PTIT-Hà-Nội-Volleyball-Club-105750407846364">3. CLB Bóng chuyền.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/PTIT.Badminton">4. CLB Cầu lông.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/taekwondo.ptit">5. CLB Taekwondo.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/EMAPTIT">6. CLB Võ thuật mở rộng - CLB EMA.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/ptitstreetworkout">7. CLB Thể thao ngoài trời - PTIT Street Workout.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/escptithn">8. CLB Thể thao điện tử.</a></li>
+                    </ul>
+                </ul>
+                <ul class="contain_type_clb">
+                    <li class="type_clb">V. VĂN HÓA, VĂN NGHỆ: </li>
+                    <ul>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/BnAPTIT">1. CLB Sách và Hành động PTIT</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/PGC.Guitar">2. CLB Guitar</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/Vhnt.ptit.hn">3. CLB Văn Hóa - Nghệ Thuật.</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/momusdancecrew">4. Nhóm nhảy MOMUS Crew</a></li>
+                        <li class="child_clb"> <a target="_blank" href="https://www.facebook.com/dff.ptitdanceclub">5. Nhóm nhảy Dff</a></li>
+                    </ul>
+                </ul>
+
+            </div>        </div></div></div>
+        
+        
+        <div class="content-top">
+            <div class="container-content-top">
+                <div class="circle-content current-circle" id="thamquan">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="#BFC9DD" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25.0833 22.1665H24.5V9.33317C24.5 8.63317 24.0333 8.1665 23.3333 8.1665V6.99984C23.3333 6.29984 22.8666 5.83317 22.1666 5.83317H19.25L14 1.1665L8.16665 5.83317H5.83331C5.13331 5.83317 4.66665 6.29984 4.66665 6.99984V8.1665C3.96665 8.1665 3.49998 8.63317 3.49998 9.33317V22.1665H2.91665C2.56665 22.1665 2.33331 22.3998 2.33331 22.7498V23.9165C2.33331 24.2665 2.56665 24.4998 2.91665 24.4998H25.0833C25.4333 24.4998 25.6666 24.2665 25.6666 23.9165V22.7498C25.6666 22.3998 25.4333 22.1665 25.0833 22.1665ZM13.65 3.49984C14.35 3.49984 14.8166 3.9665 14.8166 4.6665C14.8166 5.3665 14.35 5.83317 13.65 5.83317C13.0666 5.83317 12.4833 5.3665 12.4833 4.6665C12.4833 3.9665 12.95 3.49984 13.65 3.49984ZM9.33331 19.8332H5.83331V16.3332H9.33331V19.8332ZM9.33331 13.9998H5.83331V10.4998H9.33331V13.9998ZM16.3333 22.1665H11.6666V18.6665C11.6666 17.3832 12.7166 16.3332 14 16.3332C15.2833 16.3332 16.3333 17.3832 16.3333 18.6665V22.1665ZM16.3333 13.9998H11.6666V10.4998H16.3333V13.9998ZM22.1666 19.8332H18.6666V16.3332H22.1666V19.8332ZM22.1666 13.9998H18.6666V10.4998H22.1666V13.9998Z" "/>
+                        <defs>
+                        <linearGradient id="paint0_linear" x1="14" y1="1.1665" x2="14" y2="24.4998" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FF8989"/>
+                        <stop offset="1" stop-color="#FA5252"/>
+                        </linearGradient>
+                        </defs>
+                    </svg> 
+                    <div class="title-menu">Tham quan</div>
+                </div>
+                <div class="circle-content" id="khoiphongban">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="#BFC9DD" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.8514 9.60483C18.8514 12.3461 16.666 14.5442 13.9406 14.5442C11.2151 14.5442 9.02972 12.3461 9.02972 9.60483C9.02972 6.86248 11.2151 4.6665 13.9406 4.6665C16.666 4.6665 18.8514 6.86248 18.8514 9.60483ZM13.9406 23.3332C9.93752 23.3332 6.51946 22.6985 6.51946 20.16C6.51946 17.6205 9.91558 16.9627 13.9406 16.9627C17.9436 16.9627 21.3617 17.5973 21.3617 20.1369C21.3617 22.6754 17.9655 23.3332 13.9406 23.3332ZM20.95 9.69396C20.95 11.0914 20.5332 12.3932 19.8019 13.4755C19.7267 13.5868 19.7936 13.7371 19.9262 13.7602C20.109 13.7917 20.2981 13.8096 20.4903 13.8148C22.4072 13.8653 24.1278 12.6244 24.6031 10.7562C25.3071 7.9813 23.2398 5.49008 20.6073 5.49008C20.3211 5.49008 20.0474 5.52055 19.781 5.57518C19.7445 5.58359 19.7058 5.6004 19.6849 5.63297C19.6598 5.6729 19.6786 5.72648 19.7037 5.76116C20.4945 6.87596 20.95 8.23557 20.95 9.69396ZM24.1246 15.7645C25.4127 16.0177 26.2599 16.5347 26.6108 17.2859C26.9075 17.9027 26.9075 18.6182 26.6108 19.2339C26.0739 20.3992 24.3429 20.7732 23.6702 20.8699C23.5313 20.8909 23.4195 20.7701 23.4341 20.6303C23.7778 17.4015 21.044 15.8706 20.3368 15.5186C20.3065 15.5029 20.3002 15.4787 20.3033 15.464C20.3054 15.4535 20.318 15.4367 20.3409 15.4335C21.8713 15.4051 23.5166 15.6153 24.1246 15.7645ZM7.50997 13.8147C7.70219 13.8094 7.89022 13.7926 8.07408 13.76C8.20675 13.7369 8.2736 13.5867 8.19839 13.4753C7.46714 12.3931 7.05033 11.0912 7.05033 9.69379C7.05033 8.2354 7.5058 6.87579 8.29659 5.76099C8.32166 5.72631 8.33942 5.67273 8.31539 5.6328C8.2945 5.60128 8.2548 5.58342 8.21928 5.57501C7.95186 5.52037 7.67816 5.4899 7.39193 5.4899C4.75945 5.4899 2.69211 7.98113 3.39724 10.7561C3.87255 12.6242 5.59307 13.8651 7.50997 13.8147ZM7.69645 15.4634C7.69958 15.4791 7.69332 15.5023 7.66407 15.5191C6.9558 15.871 4.22199 17.4019 4.56567 20.6297C4.5803 20.7705 4.46957 20.8903 4.33063 20.8703C3.65788 20.7737 1.92692 20.3996 1.38998 19.2344C1.09226 18.6176 1.09226 17.9031 1.38998 17.2864C1.74098 16.5351 2.58713 16.0181 3.87517 15.7639C4.48419 15.6157 6.12845 15.4056 7.65989 15.434C7.68287 15.4371 7.69436 15.4539 7.69645 15.4634Z""/>
+                    </svg>    
+                    <div class="title-menu">Phòng ban</div>
+                    
+                </div>
+                <div class="circle-content" id="khoidaotao">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#BFC9DD" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7044 3.51898C10.034 3.51898 9.46373 3.9848 9.30365 4.61265H14.6863C14.5263 3.9848 13.956 3.51898 13.2856 3.51898H10.7044ZM16.2071 4.61264H18.1881C20.2891 4.61264 22 6.34428 22 8.47085C22 8.47085 21.94 9.3711 21.92 10.6248C21.918 10.724 21.8699 10.8212 21.7909 10.88C21.3097 11.2354 20.8694 11.5291 20.8294 11.5493C19.1686 12.6632 17.2386 13.447 15.1826 13.8369C15.0485 13.8632 14.9165 13.7934 14.8484 13.6739C14.2721 12.6754 13.1956 12.0253 11.995 12.0253C10.8024 12.0253 9.71586 12.6683 9.12256 13.6678C9.05353 13.7853 8.92346 13.8531 8.7904 13.8278C6.75138 13.4369 4.82141 12.6541 3.17059 11.5594L2.21011 10.8911C2.13007 10.8405 2.08004 10.7493 2.08004 10.6481C2.05003 10.1316 2 8.47085 2 8.47085C2 6.34428 3.71086 4.61264 5.81191 4.61264H7.78289C7.97299 3.1443 9.2036 2 10.7044 2H13.2856C14.7864 2 16.017 3.1443 16.2071 4.61264ZM21.6598 12.8152L21.6198 12.8355C19.5988 14.1924 17.1676 15.0937 14.6163 15.4684C14.2561 15.519 13.8959 15.2861 13.7959 14.9216C13.5758 14.0912 12.8654 13.5443 12.015 13.5443H12.005H11.985C11.1346 13.5443 10.4242 14.0912 10.2041 14.9216C10.1041 15.2861 9.74387 15.519 9.38369 15.4684C6.83242 15.0937 4.4012 14.1924 2.38019 12.8355C2.37019 12.8254 2.27014 12.7646 2.1901 12.8152C2.10005 12.8659 2.10005 12.9874 2.10005 12.9874L2.17009 18.1519C2.17009 20.2785 3.87094 22 5.97199 22H18.018C20.1191 22 21.8199 20.2785 21.8199 18.1519L21.9 12.9874C21.9 12.9874 21.9 12.8659 21.8099 12.8152C21.7599 12.7849 21.6999 12.795 21.6598 12.8152ZM12.7454 17.0583C12.7454 17.4836 12.4152 17.8177 11.995 17.8177C11.5848 17.8177 11.2446 17.4836 11.2446 17.0583V15.7519C11.2446 15.3367 11.5848 14.9924 11.995 14.9924C12.4152 14.9924 12.7454 15.3367 12.7454 15.7519V17.0583Z"/>
+                    </svg>     
+                    <div class="title-menu">Đào tạo</div>                                         
+                </div>
+                <div class="circle-content" id="tienichsv">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#BFC9DD" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.1798 4.41C17.1798 3.08 18.2598 2 19.5898 2C20.9198 2 21.9998 3.08 21.9998 4.41C21.9998 5.74 20.9198 6.82 19.5898 6.82C18.2598 6.82 17.1798 5.74 17.1798 4.41ZM13.3297 14.7593L16.2197 11.0303L16.1797 11.0503C16.3397 10.8303 16.3697 10.5503 16.2597 10.3003C16.1507 10.0503 15.9097 9.8803 15.6507 9.8603C15.3797 9.8303 15.1107 9.9503 14.9497 10.1703L12.5307 13.3003L9.75969 11.1203C9.58969 10.9903 9.38969 10.9393 9.18969 10.9603C8.99069 10.9903 8.81069 11.0993 8.68969 11.2593L5.73069 15.1103L5.66969 15.2003C5.49969 15.5193 5.57969 15.9293 5.87969 16.1503C6.01969 16.2403 6.16969 16.3003 6.33969 16.3003C6.57069 16.3103 6.78969 16.1893 6.92969 16.0003L9.43969 12.7693L12.2897 14.9103L12.3797 14.9693C12.6997 15.1393 13.0997 15.0603 13.3297 14.7593ZM15.4497 3.7803C15.4097 4.0303 15.3897 4.2803 15.3897 4.5303C15.3897 6.7803 17.2097 8.5993 19.4497 8.5993C19.6997 8.5993 19.9397 8.5703 20.1897 8.5303V16.5993C20.1897 19.9903 18.1897 22.0003 14.7897 22.0003H7.40069C3.99969 22.0003 1.99969 19.9903 1.99969 16.5993V9.2003C1.99969 5.8003 3.99969 3.7803 7.40069 3.7803H15.4497Z"/>
+                    </svg>  
+                    <div class="title-menu">Tiện ích</div>                       
+                </div>
+                <div class="circle-content" id="tintuc">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#BFC9DD" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.2 3H8.4C7.41 3 6.6 3.81 6.6 4.8V18.3C6.6 18.84 6.15 19.2 5.7 19.2C5.25 19.2 4.8 18.84 4.8 18.3V8.4C4.8 7.95 4.35 7.5 3.9 7.5C3.45 7.5 3 7.95 3 8.4V19.2C3 20.19 3.81 21 4.8 21H19.2C20.19 21 21 20.19 21 19.2V4.8C21 3.81 20.19 3 19.2 3ZM14.7 12H9.3C8.85 12 8.4 11.64 8.4 11.1C8.4 10.65 8.85 10.2 9.3 10.2H14.7C15.15 10.2 15.6 10.65 15.6 11.1C15.6 11.64 15.15 12 14.7 12ZM18.3 8.4H9.3C8.85 8.4 8.4 8.04 8.4 7.5C8.4 7.05 8.85 6.6 9.3 6.6H18.3C18.75 6.6 19.2 7.05 19.2 7.5C19.2 8.04 18.75 8.4 18.3 8.4Z" />
+                    </svg>  
+                    <div class="title-menu">Tin tức</div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+      <!---------------Tòa Nhà A1----------------------->
+      <iframe style="width:100%;height:100%;z-index:100;display: none;overflow: hidden;" id="modal_a1" src="" data-src="./a1_mobile.html" title="Tòa nhà A1">
+      </iframe>
+      <!---------------Tòa Nhà A2----------------------->
+      <iframe style="width:100%;height:100%;z-index:100;display: none;overflow: hidden;" id="modal_a2" src="" data-src="./a2_mobile.html" title="Tòa nhà A2">
+      </iframe>
+      <!---------------Tòa Nhà A3----------------------->
+      <iframe style="width:100%;height:100%;z-index:100;display: none;overflow: hidden;" id="modal_a3" src="" data-src="./a3_mobile.html" title="Tòa nhà A3">
+      </iframe>
+      <!---------------Văn phòng 1 cửa---------------------->
+      <iframe style="width:100%;height:100%;z-index:100;display: none;overflow: hidden;" id="modal_vpmc" src="" data-src="./vpmc_mobile.html" title="Văn phòng một cửa">
+      </iframe>
+</body>
+<script src="./static/js/owl.carousel.min.js "></script>
+<script src="./static/js/mobile_scripts.js "></script>
+
+<script>
+    var current_zoom=0;
+    var id_floor=null;
+    var delayTime = 6000;
+
+    var tile_mh=$(window).height()/$(window).width()
+    if(tile_mh<2){
+        $('.map').css( {'background': 'url(./static/images/map/map_mobile1.png) no-repeat bottom'});
+        $('.map').css({'background-size':'100vw auto'});
+        $('#floor-a1').css({'margin-left': '49vw','margin-bottom': '13.5vw',})
+        $('#floor-a2').css( {'margin-left': '62vw','margin-bottom': '38.5vw',})
+        $('#floor-a3').css( {'margin-left': '76vw','margin-bottom': '51.5vw',})
+        $('#floor-vpmc').css( {'margin-left': '83vw','margin-bottom': '0.5vw',})
+        $('#floor-hta1').css( {'margin-left': '34vw','margin-bottom': '26.5vw',})
+        $('#floor-hta2').css( {'margin-left': '53vw','margin-bottom': '25.5vw',})
+        $('#floor-canteen').css( {'margin-left': '50vw','margin-bottom': '52.5vw',})
+        $('#floor-ktxb5').css( {'margin-left': '23vw','margin-bottom': '40.5vw',})
+        $('#floor-ttkn').css( {'margin-left': '47vw','margin-bottom': '62.5vw',})
+
+    }
+      $('#loader').show();
+    $('#web').hide();
+    window.onload = function() {
+        setTimeout(function(){ 
+            localStorage.setItem("check_icon",0);
+            $('#web').show();
+            $('#loader').hide();
+ 
+            initPage();
+            setTimeout(function(){ 
+                var list_class=localStorage.getItem("key");
+                console.log(list_class)
+                if(list_class!=null){
+                    list_class=list_class.split(" ");
+                    console.log(list_class)
+                    if(list_class[1]=="1"){
+                        $('#web').css( {'display': 'none'});
+                        var iframe=$('#modal_'+list_class[2]);
+                        iframe.css( {'display': 'block'});      
+                    }
+                    else{
+                        id_menu=list_class[2];
+                        let list_circle1=document.querySelectorAll(".circle-content");
+                        for (let i=0;i<list_circle.length;i++){
+                            list_circle1[i].className="circle-content";
+                        }
+                        $('.content-map').css( {'display': 'none'});
+                        $('.'+list_class[2]).css( {'display': 'block'});
+                        setTimeout(function(){ 
+                            $('#'+list_class[2]).addClass("current-circle");
+                            $('.'+list_class[3]).css( {'display': 'block'});
+                            localStorage.removeItem("key");
+                        }, 10);
+                    }
+                    
+                }localStorage.setItem("load",1);
+
+            }, 100);
+        }, 6000);
+        $('#modal_a1').attr('src',$('#modal_a1').attr('data-src'))  
+        $('#modal_a2').attr('src',$('#modal_a2').attr('data-src'))  
+        $('#modal_a3').attr('src',$('#modal_a3').attr('data-src'))  
+        $('#modal_vpmc').attr('src',$('#modal_vpmc').attr('data-src')) 
+
+    };
+
+
+    $(document).ready(function () {
+    var isMobile = false; //initiate as false
+    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+      window.location.href = "./map.html"
+    }
+    var owl = $('.owl-carousel');
+   owl.owlCarousel({
+     items: 2,
+     loop: true,
+     margin: 10,
+     autoplay: false,
+     autoplayTimeout: 1000,
+     autoplayHoverPause: false
+   });
+
+  })
+
+  function myFunction(ele) {
+        $('#modal_search').css( {'display': 'none'});
+        var class_list=ele.getAttribute("class");
+        localStorage.setItem("key",class_list);
+        if(class_list!=null){
+                class_list=class_list.split(" ");
+                console.log(class_list)
+                if(class_list[1]=="1"){
+                    $('#web').css( {'display': 'none'});
+                    var iframe=$('#modal_'+class_list[2]);
+                    iframe.css( {'display': 'block'});
+                    
+                    var list_tang=document.querySelectorAll(".child-content-trangcon");
+                    console.log(list_tang+"abc")
+                    for (let i=0;i<list_tang.length;i++){
+                        list_tang[i].className='child-content-trangcon';
+                        console.log(list_tang[i].attr('class'))
+                    }
+                    setTimeout(function(){ 
+                        $('#'+class_list[3]).addClass('child-content-trangcon current-child-trangcon');
+                        $('.content-toanha').css( {'display': 'none'});
+                        $('.'+class_list[3]).css( {'display': 'block'});
+                        $('.content-bottom.'+class_list[4]).css( {'display': 'block'});
+                    }, 100);
+                }
+                else{
+                    $('#result').css( {'display': 'none'});
+                    $('#web').css( {'display': 'block'});
+
+                    let list_circle1=document.querySelectorAll(".circle-content");
+                    for (let i=0;i<list_circle1.length;i++){
+                        
+                         list_circle1[i].className="circle-content";
+                    }
+                    $('.content-map').css( {'display': 'none'});
+                    $('.'+class_list[2]).css( {'display': 'block'});
+                    setTimeout(function(){ 
+                        $('#'+class_list[2]).addClass("current-circle");
+                        $('.'+class_list[3]).css( {'display': 'block'});
+                        localStorage.removeItem("key");
+                    }, 10);
+                }
+        }
+    }
+
+//   Xử lý tìm kiếm
+var current_search=0;
+$.ajaxSetup({ cache: false });
+    $('#input_search').keyup(function(){
+        $('#result').css( {'display': 'block'});
+        $('#result').html('');
+        var searchField = $('#input_search').val();
+        if(searchField==""){
+            current_search=0;
+            $('#result').append(' <div class="recommend_content" style="margin-top:12px"><div class="content-text 1 a2 tang9 khoa_cntt1" onclick="myFunction(this)"><div class="recommend_text ">Khoa Công nghệ thông tin</div>  </div> </div><div class="recommend_content"> <div class="content-text 1 a1 tang1 phong_gv" onclick="myFunction(this)"><div class="recommend_text">Phòng Giáo Vụ</div></div> </div><div class="recommend_content"><div class="content-text 1 a1 tang1 khoa_dpt" onclick="myFunction(this)">             <div class="recommend_text" >Khoa Đa phương tiện</div>  </div> </div>')
+            return
+        }
+        var expression = new RegExp(searchField, "i");
+        $.getJSON('./static/data.json', function(data) {
+            $('#result').html('');
+        $.each(data, function(key, value){
+            if (value.name.search(expression) != -1)
+            {
+            current_search=1;
+            $('.no_result').remove();
+                if(value.status==1){
+                $('#result').append('<div class="recommend_content '+value.status+' '+value.toa+' '+value.tang+' '+value.khoa+'" onclick="myFunction(this)"><div class="content-text"><div class="recommend_text">'+value.name+'</div></div></div>')    
+                }
+                else{
+                $('#result').append('<div class="recommend_content '+value.status+' '+value.category+' '+value.id+'" onclick="myFunction(this)"><div class="content-text"><div class="recommend_text">'+value.name+'</div></div></div>')    
+                }
+            }
+            let list_recommend=document.querySelectorAll(".recommend_content");
+            if(list_recommend.length==0){
+                current_search=0;
+                $('#result').append('<div class="recommend_content no_result"style="height: 48px;" ><div class="content-text" style="background-color: white;color: #3366FF;"><div style="height: 32px;">Từ khoá tìm kiếm không phù hợp, vui lòng tìm theo gợi ý dưới đây!</div></div></div> <div class="recommend_content" style="margin-top:12px"><div class="content-text 1 a2 tang9 khoa_cntt1" onclick="myFunction(this)"><div class="recommend_text ">Khoa Công nghệ thông tin</div>  </div> </div><div class="recommend_content"> <div class="content-text 1 a1 tang1 phong_gv" onclick="myFunction(this)"><div class="recommend_text">Phòng Giáo Vụ</div></div> </div><div class="recommend_content"><div class="content-text 1 a1 tang1 khoa_dpt" onclick="myFunction(this)">             <div class="recommend_text" >Khoa Đa phương tiện</div>  </div> </div>')
+            } 
+        });
+    });
+});
+
+//////
+$( "#btn-close-search").click(function() {
+    $('#web').css( {'display': 'block'});
+        $('#modal_search').css( {'display': 'none'});
+  });
+
+    $( "#input_search").focus(function() {
+        $('#result').css( {'display': 'block'});
+  });
+
+  $( "#black-bg").on('click', function() {
+      if(current_search==0){
+        $(".search_recommend").css("display", "none");
+        current_search=1;
+      }
+  });
+
+
+  var id_menu=null;
+  let list_circle=document.querySelectorAll(".circle-content");
+   for (let i=0;i<list_circle.length;i++){
+     list_circle[i].onclick=function(){
+        localStorage.setItem("check_icon",0);
+        $('.typewriter1').remove()
+        $('.content-map').css( {'display': 'none'});
+        $('.title-menu').css( {'color': '#7988A4'});
+        id_menu='.'+$(this).attr('id');
+        $(id_menu).css( {'display': 'block'});
+       let j=0;
+       while(j<list_circle.length){
+         list_circle[j++].className='circle-content';
+       }
+       list_circle[i].className='circle-content current-circle';
+       list_circle[i].children[1].style.color='#E23C47';
+     }
+   }
+    $('.thamquan .menu-map').click(function() {
+        localStorage.setItem("check_icon",1);
+        let list_people=document.querySelectorAll(".people");
+        let list_typewriter=document.querySelectorAll(".typewriter");
+        let list_pop=document.querySelectorAll(".pop");
+        for( let i=0;i<list_people.length;i++){
+            list_people[i].className='over people btnFile';
+            list_typewriter[i].className='typewriter';
+            list_pop[i].className='pop';
+            $('.effect').css( {'display': 'none'});
+        }
+        id_floor=$(this).attr('id')
+        setTimeout(function() {
+            $('#floor-'+id_floor).addClass('active');
+            $('#floor-'+id_floor).find('.effect').show();
+        }, 100);
+
+
+        setTimeout(function() {
+            $('#floor-'+id_floor).find('.typewriter').addClass('active');
+        }, delayTime / 4);
+
+        setTimeout(function() {
+            if (!$('#floor-'+id_floor).find('.pop').hasClass('active')) {
+                $('#floor-'+id_floor).find('.pop').addClass('active');
+            }
+        }, delayTime / 5);
+    })
+    // TIện ích sinh viên
+    $('.tienichsv .menu-map').click(function() {
+        localStorage.setItem("check_icon",1);
+        let id_phong=$(this).attr('id');
+        let name_phong=$(this).find(".text-container-menu").text()
+        console.log(name_phong)
+        let check=1
+        if( id_phong == 'vpclb'){
+            check = 0
+        }
+        else{
+            check = 1
+        }
+        if(id_phong == 'canteen1' ){
+            id_toanha = 'canteen'
+        }
+        if( id_phong == 'vpd'){
+            id_toanha = 'ktxb5'
+        }
+        if(id_phong == 'tttttv'){
+            id_toanha = 'a3'
+        }
+        if(check == 1){
+            localStorage.setItem("check_icon",1);
+            let list_people=document.querySelectorAll(".people");
+            let list_typewriter=document.querySelectorAll(".typewriter");
+            let list_pop=document.querySelectorAll(".pop");
+            for( let i=0;i<list_people.length;i++){
+                list_people[i].className='over people btnFile';
+                list_typewriter[i].className='typewriter';
+                list_pop[i].className='pop';
+                $('.effect').css( {'display': 'none'});
+            }
+
+            setTimeout(function() {
+                $('#floor-'+id_toanha).addClass('active');
+                $('#floor-'+id_toanha).find('.effect').show();
+            }, 100);
+
+
+            setTimeout(function() {
+                console.log(id_toanha)
+                if(id_toanha =='ttkn'){
+                    $('#floor-'+id_toanha).append('<div class="typewriter1" style="margin-top:0px"><h6>'+name_phong+'</h6></div>')
+                }else{
+                    $('#floor-'+id_toanha).append('<div class="typewriter1"><h6>'+name_phong+'</h6></div>')
+                }
+            }, delayTime / 4);
+
+            setTimeout(function() {
+                if (!$('#floor-'+id_toanha).find('.pop').hasClass('active')) {
+                    $('#floor-'+id_toanha).find('.pop').addClass('active');
+                }
+            }, delayTime / 5);
+        }
+        
+    })
+
+    // CLick khối đào tạo NC// khối phòng ban
+    $('.khoiphongban .menu-map,.khoidaotao .menu-map').click(function() {
+        localStorage.setItem("check_icon",1);
+        let id_phong=$(this).attr('id');
+        let id_toanha
+        let list_class1=$('.'+id_phong).find(".next-to-floor").attr('class');
+        let name_phong=$('.'+id_phong).find(".descrip-content").text()
+        console.log(name_phong)
+        if(list_class1!='' && list_class1 != null){
+            list_class1=list_class1.split(" ");
+            id_toanha=list_class1[2];
+        }
+        else{
+            id_toanha='ttkn'
+        }
+        localStorage.setItem("check_icon",1);
+        let list_people=document.querySelectorAll(".people");
+        let list_typewriter=document.querySelectorAll(".typewriter");
+        let list_pop=document.querySelectorAll(".pop");
+        for( let i=0;i<list_people.length;i++){
+            list_people[i].className='over people btnFile';
+            list_typewriter[i].className='typewriter';
+            list_pop[i].className='pop';
+            $('.effect').css( {'display': 'none'});
+        }
+
+        setTimeout(function() {
+            $('#floor-'+id_toanha).addClass('active');
+            $('#floor-'+id_toanha).find('.effect').show();
+        }, 100);
+
+
+        setTimeout(function() {
+            console.log(id_toanha)
+            if(id_toanha =='ttkn'){
+                $('#floor-'+id_toanha).append('<div class="typewriter1" style="margin-top:0px"><h6>'+name_phong+'</h6></div>')
+            }else{
+                $('#floor-'+id_toanha).append('<div class="typewriter1"><h6>'+name_phong+'</h6></div>')
+            }
+        }, delayTime / 4);
+
+        setTimeout(function() {
+            if (!$('#floor-'+id_toanha).find('.pop').hasClass('active')) {
+                $('#floor-'+id_toanha).find('.pop').addClass('active');
+            }
+        }, delayTime / 5);
+    })
+
+
+
+    $('.icon-search-header').click(function() {
+        $('#modal_search').css( {'display': 'block'});
+        $('#web').css( {'display': 'none'});
+        setTimeout(function(){ 
+            $('#inputsearch').focus();
+        }, 200);
+  
+    })
+    
+    $('.content').click(function() {
+        $('#result').css( {'display': 'none'});
+    })
+    $('.menu-map').click(function() {
+        $(this).css('background-color',' #E23C47');
+        $(this).find(".text-container-menu").css( {'color': 'white'});
+
+        id_floor=$(this).attr('id');
+        setTimeout(function(){ 
+            $('.menu-map').css('background-color','#FCFDFE');
+            $('.'+id_floor).css( {'display': 'block'});
+            $('#'+id_floor).find(".text-container-menu").css( {'color': '#283352'}); 
+        }, 200);
+    });
+
+    $('.back-btn-map').click(function() {
+        console.log(id_floor)
+        $('.typewriter1').remove()
+
+        $('.'+id_floor).css( {'display': 'none'});
+        $(this).parent().parent().css( {'display': 'none'});
+        localStorage.setItem("check_icon",0);
+        localStorage.removeItem("key")
+    })
+    $('.next-btn-map').click(function() {
+        console.log('#modal_'+id_floor)
+        $('#web').css( {'display': 'none'});
+        $('#modal_'+id_floor).css( {'display': 'block'});
+    })
+    $('.next-to-floor').click(function() {
+        let listclass= $(this).attr("class");
+        localStorage.setItem("key",listclass);
+        listclass=listclass.split(" ");
+
+        $('#web').css( {'display': 'none'});
+        $('#modal_'+listclass[2]).css( {'display': 'block'});
+    })
+</script>
+</html>

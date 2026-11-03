@@ -1,0 +1,179 @@
+[
+    {
+      "name":"Phòng Giáo Vụ",
+      "toa":"a1",
+      "tang":"tang1",
+      "khoa":"phong_gv",
+      "status":1
+    },
+    {
+      "name":"Phòng Tài chính Kế toán",
+      "toa":"a1",
+      "tang":"tang1",
+      "khoa":"phong_tckt",
+      "status":1
+    },
+    {
+      "name":"Khoa Đa Phương Tiện",
+      "toa":"a1",
+      "tang":"tang1",
+      "khoa":"khoa_dpt",
+      "status":1
+    },
+    {
+      "name":"Phòng Chính trị và Công tác Sinh viên",
+      "toa":"a1",
+      "tang":"tang1",
+      "khoa":"phong_ctctsv",
+      "status":1
+    },
+    {
+      "name":"Phòng Đào tạo",
+      "toa":"a1",
+      "tang":"tang2",
+      "khoa":"phong_dt",
+      "status":1
+    },
+    {
+      "name":"Phòng quản lý khoa học công nghệ và hợp tác quốc tế",
+      "toa":"a1",
+      "tang":"tang2",
+      "khoa":"phong_qlkhcn",
+      "status":1
+    },
+    
+    {
+      "name":"Viện Công nghệ Thông tin và Truyền thông CDIT",
+      "toa":"a1",
+      "tang":"tang3",
+      "khoa":"cdit",
+      "status":1
+    },
+    {
+      "name":"Trung tâm Đào tạo BCVT 1",
+      "toa":"a1",
+      "tang":"tang4",
+      "khoa":"ttdt",
+      "status":1
+    },
+    {
+      "name":"Trung tâm Đào tạo Quốc tế",
+      "toa":"a1",
+      "tang":"tang5",
+      "khoa":"ttdtqt",
+      "status":1
+    },
+    {
+      "name":"Trung tâm Thí nghiệm Thực hành",
+      "toa":"a1",
+      "tang":"tang5",
+      "khoa":"tttnth",
+      "status":1
+    },
+    
+    
+    {
+      "name":"Trung tâm Khảo thí",
+      "toa":"a2",
+      "tang":"tangg",
+      "khoa":"ttkt",
+      "status":1
+    },
+    {
+      "name":"Trung tâm Dịch vụ",
+      "toa":"a2",
+      "tang":"tangg",
+      "khoa":"ttdv",
+      "status":1
+    },    
+    {
+      "name":"Công Đoàn khối",
+      "toa":"a2",
+      "tang":"tangg",
+      "khoa":"cdk",
+      "status":1
+    },
+    {
+      "name":"Khoa Công Nghệ Thông Tin",
+      "toa":"a2",
+      "tang":"tang9",
+      "khoa":"khoa_cntt1",
+      "status":1
+    },
+    {
+      "name":"Khoa An Toàn Thông Tin",
+      "toa":"a2",
+      "tang":"tang10",
+      "khoa":"khoa_attt",
+      "status":1
+    },
+    {
+      "name":"Khoa Kỹ Thuật Điện Tử",
+      "toa":"a2",
+      "tang":"tang9",
+      "khoa":"khoa_ktdt1",
+      "status":1
+    },    
+    {
+      "name":"Khoa Quản trị Kinh doanh",
+      "toa":"a2",
+      "tang":"tang9",
+      "khoa":"khoa_qtkd1",
+      "status":1
+    },
+    {
+      "name":"Khoa Quốc tế và Đào tạo sau Đại học",
+      "toa":"a2",
+      "tang":"tang10",
+      "khoa":"khoa_qtdtsdh",
+      "status":1
+    },
+    {
+      "name":"Khoa Cơ bản 1",
+      "toa":"a2",
+      "tang":"tang10",
+      "khoa":"khoa_cb1",
+      "status":1
+    },
+    {
+      "name":"Khoa Tài chính Kế toán",
+      "toa":"a2",
+      "tang":"tang10",
+      "khoa":"khoa_tckt",
+      "status":1
+    },
+    {
+      "name":"Khoa Viễn Thông 1",
+      "toa":"a2",
+      "tang":"tang10",
+      "khoa":"khoa_vt1",
+      "status":1
+    },
+    
+
+    {
+      "name":"Trung tâm Thông tin Thư viện",
+      "toa":"a3",
+      "tang":"tang1",
+      "khoa":"tttttv",
+      "status":1
+    },
+
+    
+    {
+      "name":"Văn phòng Một cửa",
+      "toa":"vpmc",
+      "tang":"vpmc",
+      "khoa":"",
+      "status":1
+    },
+
+
+    {
+      "name":"Canteen",
+      "category":"tienichsv",
+      "id":"canteen",
+      "status":0
+    }
+  ]
+  

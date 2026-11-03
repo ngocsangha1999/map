@@ -1,0 +1,850 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="preload" href="./static/images/map/thangbo_close.svg" as="image" type="image/png">
+    <link rel="stylesheet" href="./static/css/trangcon_mobile.css">
+</head>
+<style>
+
+.container-content-trangcon{
+    display: flex;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+<body>
+  <div class="modal fade" id="modal_a1" role="dialog" style="width:100vw;height:100vh;
+  background: url(/static/images/home/bg-trangcon.webp) no-repeat center top;
+  background-size: 100% auto;
+  overflow: hidden;">
+    <div class="modal-dialog" style="    width: 100vw;
+    overflow: hidden;
+    height: 100%;
+    top: 0;">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:100%;height:100%;position:absolute;overflow: hidden;">
+            <div class="mapcon">
+                <div class="header_back">
+                    <div class="icon_back">
+                        <a href="" id="close-iframe">
+                            <img  src="./static/images/home/home-btn-back.svg" alt="back" width="24px" height="24px">
+                        </a>
+                    </div>
+                    <div class="header-trangcon" >Tòa Nhà A1</div>
+                    <img class="icon_search" src="./static/images/home/btn-search.svg" alt="">
+                </div>
+                <div class="matcat tang1 tongquantang1" style="display: flex;"><img src="./static/images/trangcon/matcat/a1/tongquantang1.webp" alt=""></div>
+                <div class="matcat tang1 tongquantang1b"><img src="./static/images/trangcon/matcat/a1/tongquantang1b.webp" alt=""></div>
+                <div class="matcat tang sanha1"><img src="./static/images/trangcon/matcat/a1/sanha1.webp" alt=""></div>
+                <div class="matcat tang khoa_dpt"><img src="./static/images/trangcon/matcat/a1/khoa_dpt.webp" alt=""></div>
+                <div class="matcat tang studio_dpt"><img src="./static/images/trangcon/matcat/a1/studio_dpt.webp" alt=""></div>
+                <div class="matcat tang phong_ncttnt"><img src="./static/images/trangcon/matcat/a1/phong_ncttnt.webp" alt=""></div>
+                <div class="matcat tang phong_gv"><img src="./static/images/trangcon/matcat/a1/phong_gv.webp" alt=""></div>
+                <div class="matcat tang vpdu"><img src="./static/images/trangcon/matcat/a1/vpdu.webp" alt=""></div>
+                <div class="matcat tang phong_ctctsv"><img src="./static/images/trangcon/matcat/a1/phong_ctctsv.webp" alt=""></div>
+                <div class="matcat tang ttkt"><img src="./static/images/trangcon/matcat/a1/ttkt.webp" alt=""></div>
+                <div class="matcat tang phong_tckt"><img src="./static/images/trangcon/matcat/a1/phong_tckt.webp" alt=""></div>
+                
+                <div class="matcat tang tongquantang2"><img src="./static/images/trangcon/matcat/a1/tongquantang2.webp" alt=""></div>
+                <div class="matcat tang tongquantang2b"><img src="./static/images/trangcon/matcat/a1/tongquantang2b.webp" alt=""></div>
+                <div class="matcat tang khu_lvldhv"><img src="./static/images/trangcon/matcat/a1/khu_lvldhv.webp" alt=""></div>
+                <div class="matcat tang capbang"><img src="./static/images/trangcon/matcat/a1/capbang.webp" alt=""></div>
+                <div class="matcat tang phong_qlkhcn"><img src="./static/images/trangcon/matcat/a1/phong_qlkhcn.webp" alt=""></div>
+                <div class="matcat tang phong_dt"><img src="./static/images/trangcon/matcat/a1/phong_dt.webp" alt=""></div>
+
+                
+                <div class="matcat tang tongquantang3"><img src="./static/images/trangcon/matcat/a1/tongquantang3.webp" alt=""></div>
+                <div class="matcat tang tongquantang3b"><img src="./static/images/trangcon/matcat/a1/tongquantang3b.webp" alt=""></div>
+                <div class="matcat tang cdit"><img src="./static/images/trangcon/matcat/a1/cdit.webp" alt=""></div>
+                
+                <div class="matcat tang tongquantang4"><img src="./static/images/trangcon/matcat/a1/tongquantang4.webp" alt=""></div>
+                <div class="matcat tang tongquantang4b"><img src="./static/images/trangcon/matcat/a1/tongquantang4b.webp" alt=""></div>
+                <div class="matcat tang ttdt"><img src="./static/images/trangcon/matcat/a1/ttdt.webp" alt=""></div>
+                <div class="matcat tang phong_lv4"><img src="./static/images/trangcon/matcat/a1/phong_lv4.webp" alt=""></div>
+                
+                <div class="matcat tang tongquantang5"><img src="./static/images/trangcon/matcat/a1/tongquantang5.webp" alt=""></div>
+                <div class="matcat tang tongquantang5b"><img src="./static/images/trangcon/matcat/a1/tongquantang5b.webp" alt=""></div>
+                <div class="matcat tang ttdtqt"><img src="./static/images/trangcon/matcat/a1/ttdtqt.webp" alt=""></div>
+                <div class="matcat tang phong_lv5"><img src="./static/images/trangcon/matcat/a1/phong_lv5.webp" alt=""></div>
+
+            </div>
+            <div class="content content-trangcon">
+                <div class="content-top-trangcon">
+                    <div class="container-content-trangcon">
+                       <div class="child-content-trangcon current-child-trangcon" id="tang1">Tầng 1</div>
+                       <div class="child-content-trangcon" id="tang2">Tầng 2</div>
+                       <div class="child-content-trangcon" id="tang3">Tầng 3</div>
+                       <div class="child-content-trangcon" id="tang4">Tầng 4</div>
+                       <div class="child-content-trangcon" id="tang5">Tầng 5</div>
+                       <div class="child-content-trangcon " style="max-width: 0px;
+                       min-width: 0px;"></div>
+                    </div>
+                </div>
+                <!-------------------------- Tầng 1------------------------ -->
+                <div class="content-bottom content-toanha tang1" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 1</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang1" >
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="sanha1" >
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Sảnh tầng 1</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="khoa_dpt">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">1.1</div> 
+                                    <div class="name-phong">Khoa Đa phương tiện</div>
+                                </div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="studio_dpt">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">1.2</div> 
+                                    <div class="name-phong">Studio Khoa Đa phương tiện</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="phong_ncttnt">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">1.3</div> 
+                                    <div class="name-phong">Phòng nghiên cứu TTNT và Dữ liệu ĐPT</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="phong_gv">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">1.4</div> 
+                                    <div class="name-phong">Phòng Giáo vụ</div>
+                                </div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="vpdu">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">1.5</div> 
+                                    <div class="name-phong">Văn phòng Đảng ủy Học viện</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="phong_ctctsv">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">1.6</div> 
+                                    <div class="name-phong">Phòng Chính trị CTSV</div>
+                                </div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="ttkt">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">1.7</div> 
+                                    <div class="name-phong">Trung tâm Khảo thí và ĐB CLGD</div>
+                                </div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="phong_tckt">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">1.8</div> 
+                                    <div class="name-phong">Phòng Tài chính Kế toán</div>
+                                </div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+
+
+                    </div>
+                </div>
+                <!-------------------------- Tầng 2------------------------ -->
+                <div class="content-bottom content-toanha tang tang2" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 2</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang2" >
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="khu_lvldhv" style="height: 64px;">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.1</div> 
+                                    <div class="name-phong">Khu vực làm việc của lãnh đạo và các
+                                        khối phòng ban</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="phong_qlkhcn" style="height: 56px;">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.2</div> 
+                                    <div class="name-phong">Phòng quản lý KHCN và hợp tác quốc tế</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="capbang" style="height: 56px;">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.3</div> 
+                                    <div class="name-phong">Phòng cấp bằng tốt nghiệp</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="phong_dt" style="height: 56px;">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.4</div> 
+                                    <div class="name-phong">Phòng Đào tạo</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+
+                    </div>
+                </div>
+                <!-------------------------- Tầng 3------------------------ -->
+                <div class="content-bottom content-toanha tang tang3" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 3</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang3" >
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="cdit" >
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Viện CNTT và Truyền thông CDIT</div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+
+                    </div>
+                </div>
+                <!-------------------------- Tầng 4------------------------ -->
+                <div class="content-bottom content-toanha tang tang4" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 4</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang4" >
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="ttdt">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">4.1</div> 
+                                    <div class="name-phong">Trung tâm Đào tạo BCVT 1</div>
+                                </div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha " id="phong_lv4">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">4.2</div> 
+                                    <div class="name-phong">Phòng làm việc</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+
+                    </div>
+                </div>
+                <!-------------------------- Tầng 5------------------------ -->
+                <div class="content-bottom content-toanha tang tang5" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 5</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang5" >
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="ttdtqt">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">5.1</div> 
+                                    <div class="name-phong">Trung tâm đào tạo quốc tế CIE</div>
+                                </div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="phong_lv5">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">5.2</div> 
+                                    <div class="name-phong">Phòng làm việc</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+
+                    </div>
+                </div>
+                <!----------Tầng 1/// Phòng giáo vụ --------------------->
+                <div class="content-bottom content-toanha trangcon phong_gv" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Phòng Giáo vụ
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng nhiệm vụ: Giải quyết các vấn đề liên quan tới: danh sách lớp; kế hoạch học tập; thời khóa biểu; kết quả học tập học kỳ/năm học; đăng ký học lại; học 2 CTĐT đồng thời; xin miễn học-miễn thi; xin nghỉ học từ 3 ngày trở lên; xin chuyển trường, dừng học, thôi học, bảo lưu kết quả học tập, thẻ sinh viên…</li>
+                                <li>Chuyên viên: Bà Nguyễn Thị Vân Hà</li>
+                                <li>Địa chỉ: Tầng 1,  nhà A1, Km10, Nguyễn Trãi, Hà Đông, Hà Nội</li>
+                                <li> Điện thoại: 024.33501459</li>
+                                <li>Thông tin chi tiết:</li>
+                                <li><a href="https://portal.ptit.edu.vn/giaovu/">Chi tiết</a>                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-bottom content-toanha trangcon phong_tckt" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Phòng Tài chính Kế toán
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng nhiệm vụ: Thực hiện thu học phí, lệ phí và các khoản thu khác;  thanh toán các khoản chi theo chế độ quy định.</li>
+                                <li>Trưởng phòng: Bà Nguyễn Thị Bích Liên</li>
+                                <li>Điện thoại: 024.3754 0410</li>
+                                <li>Địa chỉ: Tầng 1,  nhà A1, Km10, Nguyễn Trãi, Hà Đông, Hà Nội</li>
+                                <li>Điện thoại: 024.38543664</li>
+                                <li>
+                                    <a href="https://portal.ptit.edu.vn/co-cau-to-chuc/phong-tai-chinh-ke-toan/">Chi tiết</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-bottom content-toanha trangcon khoa_dpt" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Khoa Đa Phương Tiện
+                        </div>
+                        <img class="next-btn-khoa " src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1 " src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Khoa Đa Phương tiện có chức năng đào tạo và nghiên cứu khoa học các chuyên ngành Công nghệ Đa phương tiện và Truyền thông Đa phương tiện theo mục tiêu, chương trình, nội dung, phương pháp đào tạo do Giám đốc Học viện phê duyệt.</li>
+                                <li>Các bộ môn thuộc khoa:</li>
+                                <ul>
+                                    <li>Bộ môn Công nghệ đa phương tiện: TS. Vũ Hữu Tiến – Phụ trách bộ môn</li>
+                                    <li>Bộ môn Thiết kế Đa phương tiện: Ths. Trần Quốc Trung – Phụ trách bộ môn</li>
+                                    <li>Bộ môn Truyền thông đa phương tiện: TS. Lê Thị Hằng – Phụ trách bộ môn</li>
+                                </ul>
+                                <li>Trợ lý khoa: Nguyễn Thị Huyền</li>
+                                <li>Địa chỉ: Tầng 1,  nhà A1, Km10, Nguyễn Trãi, Hà Đông, Hà Nội</li>
+                                <li> Điện thoại: 024. 33525742 (0915 140 098)</li>
+                                <li><a href="https://portal.ptit.edu.vn/khoa-da-phuong-tien/">Chi tiết</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-bottom content-toanha trangcon phong_ctctsv" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Phòng Chính trị và CTSV
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng nhiệm vụ: Giải quyết các vấn đề liên quan đến các thủ tục hành chính, công tác sinh viên: chế độ, chính sách, quân sự, xác nhận sinh viên, học bổng,…</li>
+                                <li>Chuyên viên: Bà Nguyễn Thu Hương</li>
+                                <li>Lịch tiếp:</li>
+                                <ul>
+                                    <li> Chuyên viên phòng Giáo vụ và Phòng CT&CTSV tiếp nhận yêu cầu, hoàn trả kết quả giải quyết các thủ tục hành chính, hỏi đáp, thắc mắc, khiếu nại,.. có liên quan (trừ sáng thứ 2 và chiều thứ 6) tại bộ phận giao dịch “một cửa”.</li>
+                                        <ul>
+                                        <li>Buổi sáng:  08h30 đến 11h30,</li>
+                                        <li>Buổi chiều: 14h00 đến 16h30,</li>
+                                    </ul>
+                                    <li>Chuyên viên phòng Giáo vụ, CT&CTSV tiếp nhận, xử lý giải đáp các vướng mắc trực tiếp tại phòng làm việc (Phòng Giáo vụ - phòng 117 – nhà A1, Phòng CT&CTSV – phòng tầng 2 – A1).</li>
+                                    <li>Lãnh đạo phòng Giáo vụ, CT&CTSV trực tiếp và giải quyết vướng mắc: vào buổi chiều thứ 5 hàng tuần, từ : 14h00 đến 16h30 tại phòng Trưởng phòng Giáo vụ, tầng 1 – Nhà A1, Trưởng phòng CT&CTSV, tầng 1 – Nhà A1.</li>
+                                    <li> Các trường hợp đặc biệt khác được thực hiện theo thông báo hoặc hướng dẫn riêng của phòng Giáo vụ, Phòng CT&CTSV và của Học viện.</li>
+                                </ul>
+                                <li>
+                                    <a href="https://portal.ptit.edu.vn/co-cau-to-chuc/phong-chinh-tri-va-cong-tac-sinh-vien/">Chi tiết</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-bottom content-toanha trangcon ttkt" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Trung tâm Khảo thí
+                        </div>
+                        <img class="next-btn-khoa " src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1 " src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng và nhiệm vụ: Giải quyết các vấn đề liên quan tới: danh sách dự thi; xin vắng thi; bảng điểm thành phần; bảng điểm môn học; xin dự thi (còn quyền dự thi do vắng thi có phép); xin phúc tra bài thi; thi tốt nghiệp.</li>
+                                <li>Phó Trưởng TT – Phụ trách TT: ThS. Trần Thị Mỹ Hạnh</li>
+                                <li>Điện thoại: 0936 285 658</li>
+                                <li>Thời gian: trong các ngày thứ 5 hàng tuần.</li>
+                                <ul>
+                                    <li>Buổi sáng:   08h30 đến 11h00,</li>
+                                    <li>Buổi chiều: 14h00 đến 16h30.</li>
+                                </ul>
+                                <li>Địa điểm tiếp và làm việc: Tầng 1- nhà A1-Cơ sở Hà Nội</li>
+                                <li><a href="https://portal.ptit.edu.vn/ttkt/">Chi tiết</a></li>
+                            </ul>                    
+                        </div>
+                    </div>
+                </div>   
+                <!----------Tầng 2/// Phòng đào tạo --------------------->
+                <div class="content-bottom content-toanha trangcon phong_dt" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Phòng Đào tạo
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng nhiệm vụ: Tổ chức, quản lý, điều hành công tác mở  ngành đào tạo; Xây dựng chương trình đào tạo; phương pháp tổ chức đào tạo; xây  dựng học liệu; </li>
+                                <li>Ngoài ra, phòng Đào tạo còn tổ chức quản lý, điều hành công tác tuyển sinh và tư vấn tuyển  sinh các cấp, hệ, loại hình đào tạo trong toàn Học viện; Công tác thẩm định,  quản lý in ấn và cấp phát phôi, văn bằng; Tổ chức triển khai thực hiện, giám  sát, kiểm tra, tổng hợp, đánh giá kết quả, tình hình hoạt động của các mặt công tác HV giao.</li>
+                                <li>Quyền trưởng phòng: Ông Đặng Văn Tùng</li>
+                                <li>E-mail: tungdv@ptit.edu.vn</li>
+                                <li>Phó trưởng phòng: Bà Nguyễn Thị Hồng Huệ</li>
+                                <li>Email: huenth@ptit.edu.vn</li>
+                                <li>Địa chỉ: Tầng 2,  nhà A1, Km10, Nguyễn Trãi, Hà Đông, Hà Nội</li>
+                                <li>Điện thoại: 024.33528122</li>
+                                <li><a href="https://portal.ptit.edu.vn/co-cau-to-chuc/phong-dao-tao/">Chi tiết</a></li>
+                            </ul>                                
+                        </div>
+                    </div>
+                </div>   
+                <div class="content-bottom content-toanha trangcon phong_qlkhcn" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Phòng quản lý KHCN và hợp tác quốc tế
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng nhiệm vụ: Tham mưu và giúp việc cho Giám đốc Học viện về tổ chức, quản lý, điều hành công tác khoa học công nghệ; công tác thông tin – thư viện và hợp tác quốc tế trong toàn Học viện;</li>
+                                <li>Tổ chức triển khai thực hiện, giám sát, kiểm tra, tổng hợp, đánh giá hoạt động khoa học công nghệ và hợp tác quốc tế theo nhiệm vụ được giao.</li>
+                                <li>Điện thoại:  024.33524054</li>
+                                <li>Trưởng phòng: Ông Ngô Đức Thiện</li>
+                                <li>E-mail: thiennd@ptit.edu.vn</li>
+                                <li>Phó trưởng phòng: Ông Đỗ Trung Anh</li>
+                                <li>Email: anhdt@ptit.edu.vn</li>
+                                <li>Địa chỉ: Tầng 2, nhà A1, Km10, Nguyễn Trãi, Hà Đông, Hà Nội</li>
+                                <li><a href="https://portal.ptit.edu.vn/co-cau-to-chuc/phong-quan-ly-khoa-hoc-cong-nghe-hop-tac-quoc-te/">Chi tiết</a></li>
+                                </ul>                             
+                        </div>
+                    </div>
+                </div>   
+                <!----------Tầng 3/// CDIT --------------------->
+                <div class="content-bottom content-toanha trangcon cdit" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Viện CNTT và Truyền thông
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng nhiệm vụ: Nghiên cứu, ứng dụng các thành tựu khoa học công nghệ vào các sản phẩm, dịch vụ và chương trình đào tạo nhằm góp phần thúc đẩy sự phát triển của đất nước.</li>
+                                <li> Ban lãnh đạo:</li>
+                                <li>TS. Nguyễn Trung Kiên - Viện trưởng</li>
+                                <li>ThS. Nguyễn Kim Quang - Phó viện trưởng</li>
+                                <li>TS. Cao Minh Thắng - Viện trưởng</li>
+                                <li>Vị trí: Tầng 3, nhà A1, Km10, Nguyễn Trãi, Hà Đông, Hà Nội</li>
+                                <li><a href="http://cdit.ptit.edu.vn/">Chi tiết</a></li>
+                            </ul>                                
+                        </div>
+                    </div>
+                </div>   
+                <!-------------------Tầng 4///  --------------------->            
+                <div class="content-bottom content-toanha trangcon ttdt" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Trung tâm Đào Tạo BCVT
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng và nhiệm vụ: của Trung tâm là khảo sát nhu cầu, xây dựng mục tiêu, kế hoạch, nội dung, chương trình đào tạo bồi dưỡng ngắn hạn tập trung và từ xa;</li>
+                                <li>Ngoài ra, Trung tâm còn tổ chức đào tạo bồi dưỡng nâng cao, cập nhật các kiến thức về kỹ thuật nghiệp vụ, quản lý kinh tế trong lĩnh vực bưu chính viễn thông, tin học, ngoại ngữ … cho cán bộ công nhân viên trong Ngành; Tổ chức đào tạo từ xa cho tất cả các cấp học; Tổ chức các khóa đào tạo quốc tế; Thực hiện các dự án hợp tác quốc tế.</li>
+                                <li>Địa chỉ: Tầng 4, nhà A1, Km10, Nguyễn Trãi, Hà Đông, Hà Nội</li>
+                                <li>Điện thoại: 024. 35540586</li>
+                                <li><a href="https://portal.ptit.edu.vn/co-cau-to-chuc/trung-tam-dao-tao-buu-chinh-vien-thong-1/">Chi tiết</a></li>
+                            </ul>
+                                                      
+                        </div>
+                    </div>
+                </div>  
+                <!-------------------Tầng 5///  --------------------->            
+                <div class="content-bottom content-toanha trangcon ttdtqt" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Trung tâm Đào tạo Quốc tế
+                        </div>
+                        <img class="next-btn-khoa " src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1 " src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">
+                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng và nhiệm vụ: Trung tâm có chức năng phát triển, tổ chức và quản lý các hoạt động, các chương trình: Đào tạo liên kết quốc tế; đào tạo tiên tiến; đào tạo chất lượng cao; Trao đổi học viên, sinh viên quốc tế (dưới đây gọi chung là sinh viên); </li>
+                                <li>Ngoài ra, Trung tâm còn đào tạo hướng nghiệp, ngôn ngữ và kỹ năng sống cho học sinh, sinh viên đi du học; Tổ chức lớp học và trại hè quốc tế cho học sinh, sinh viên (gọi chung là đào tạo quốc tế)</li>
+                                <li>Ban lãnh đạo:</li>
+                                <ul>
+                                    <li>Giám đốc Trung tâm: Ông Hoàng Hữu Hạnh</li>
+                                    <li>Phó Giám đốc TT: Nguyễn Minh Phượng</li>
+                                    </ul>
+                                <li>Địa chỉ: Tầng 05,  nhà A1, Km10, Nguyễn Trãi, Hà Đông, Hà Nội</li>
+                                <li>Điện thoại: 024.33525741 (0961 146.046)</li>
+                                <li >
+                                    <a href="https://portal.ptit.edu.vn/co-cau-to-chuc/trung-tam-dao-tao-quoc-te/">Chi tiết</a>
+                                </li>
+                            </ul>
+                                                      
+                        </div>
+                    </div>
+                </div>   
+  
+            </div>
+
+                
+
+            
+        </div>
+    </div>
+</div>
+<script> 
+    var id_tang=null;
+        // Xử lý các khoa
+    var id_khoa=null;
+    var current_zoom=0;
+    var add_state=0;
+    var loadtang1=0;
+    jQuery(document).ready(function($) {
+        if (window.history && window.history.pushState) {
+        $(window).on('popstate', function() {
+            id_tang=null;
+            id_khoa=null;
+            localStorage.removeItem("key");
+            parent.window.$('#web').css( {'display': 'block'});
+            parent.window.$('#modal_a1').css( {'display': 'none'});
+            add_state=0;
+        });
+        }
+        });
+    $(document).ready(function(){
+        runEffect() 
+    });
+    var runEffect = function() {
+        var list_class=localStorage.getItem("key");
+        var load_status=localStorage.getItem("load");
+        var elem = parent.window.document.getElementById("modal_a1");
+        var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("display");
+        if( theCSSprop =='block'){
+            if(add_state==0){
+                window.history.pushState('forward', null, '');
+                add_state=1;
+            }
+            if(load_status==1){
+                if(list_class!= null){
+                    list_class=list_class.split(" ");
+                    id_tang=list_class[3]
+                    id_khoa=list_class[4]
+                    var list_tang=document.querySelectorAll(".child-content-trangcon");
+                    for (let i=0;i<list_tang.length;i++){
+                        list_tang[i].className='child-content-trangcon';
+                    }
+                    $('.matcat.tongquantang1').css( {'display': 'none'});
+                    setTimeout(function(){ 
+                        if(!$('#'+id_tang).hasClass('current-child-trangcon')){
+                            $('#'+id_tang).addClass('current-child-trangcon');
+                        }
+                        if(id_khoa!=null){
+                            $('.matcat.'+id_khoa).css( {'display': 'none'});
+                        }
+                        
+                        $('.content-toanha').css( {'display': 'none'});
+                        $('.content-bottom.'+id_tang).css( {'display': 'block'});
+                        $('.content-bottom.'+list_class[4]).css( {'display': 'block'});
+                        $('.matcat.'+list_class[4]).css( {'display': 'flex'});
+                        localStorage.removeItem('key')                     
+                    }, 10);
+                }
+                else{
+                    if(id_tang==null){
+                        id_tang='tang1'
+                        $('.content-toanha.tang1').css( {'display': 'block'});
+                        if(!$('#tang1').hasClass('current-child-trangcon')){
+                            $('#tang1').addClass('current-child-trangcon');
+                        }
+                        if(loadtang1==0){
+                            $('#tongquantang1').find('.text-container-menu').css("color",'#E23C47')
+                            $('#tongquantang1').css("border-bottom",'1px solid #E23C47') 
+                            loadtang1=1;
+                        }
+
+                    }
+                    else{
+                        $('.content-toanha.'+id_tang).css( {'display': 'block'});
+                        if(!$('#'+id_tang).hasClass('current-child-trangcon')){
+                            $('#'+id_tang).addClass('current-child-trangcon');
+                        }
+                    }
+                } 
+            }  
+        }
+        setTimeout(function () {
+            runEffect();
+        },100)
+    }
+
+///
+// var a=[]
+// var all_phong=document.querySelectorAll(".menu_toanha");
+// for (let i=0;i<all_phong.length;i++){
+//     a.push(all_phong[i].id)
+// }
+// console.log(a)
+
+    ////
+   list_tang=document.querySelectorAll(".child-content-trangcon");
+   for (let i=0;i<list_tang.length;i++){
+     list_tang[i].onclick=function(){
+        $('.matcat').css("display",'none')
+         localStorage.removeItem('key')
+        $('.content-toanha').css( {'display': 'none'});
+        id_tang=$(this).attr('id');
+        console.log(id_tang)
+        $('.content-toanha.'+id_tang).css( {'display': 'block'});
+
+        let element= $('.tongquan').find('.text-container-menu')
+        $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+        $('.tongquan').css("border-bottom",'1px solid #E23C47')
+        element.css("color",'#E23C47')
+        setTimeout(function(){ 
+            var elem =document.querySelector("."+id_tang+" .thangbo_open").style.display
+            if( elem =='none'){
+                $('.tongquan'+id_tang).css("display",'flex')
+            }
+            else{
+                $('.tongquan'+id_tang+'b').css("display",'flex')
+            }
+        }, 10);
+
+       let j=0;
+       while(j<list_tang.length){
+         list_tang[j++].className='child-content-trangcon';
+       }
+       list_tang[i].className='child-content-trangcon current-child-trangcon';
+     }
+   }
+    // Click icon search
+    $('.icon_search').click(function() {
+        parent.window.$('#modal_search').css( {'display': 'block'});
+        parent.window.$('#modal_a1').css( {'display': 'none'});
+    })
+    
+    function clicktothangbo(){
+        $('.text-container-menu').css('color','#283352');
+        let element= $('.tongquan').find('.text-container-menu')
+        $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+        $('.tongquan').css("border-bottom",'1px solid #E23C47')
+        element.css("color",'#E23C47')
+        $('.matcat').css( {'display': 'none'});
+        if(id_tang==null) {
+            id_tang='tang1';
+        }
+    }
+    $('.thangbo_close').click(function() {
+        clicktothangbo()
+        $(this).css( {'display': 'none'});
+        $(this).parent().find(".thangbo_open").css( {'display': 'block'});
+        $('.tongquan'+id_tang+'b').css("display",'flex')
+    })
+    $('.thangbo_open').click(function() {
+        clicktothangbo()
+        $(this).css( {'display': 'none'});
+        $(this).parent().find(".thangbo_close").css( {'display': 'block'});
+        console.log(id_tang)
+        $('.tongquan'+id_tang).css("display",'flex')
+    })
+
+    /// xwr lys click phongf
+    $('.menu_toanha').click(function() {
+        let element= $(this).find('.text-container-menu')
+        $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+        $('.text-container-menu').css('color','#283352');
+        $(this).css("border-bottom",'1px solid #E23C47')
+        element.css("color",'#E23C47')
+
+        id_khoa=$(this).attr('id');
+        console.log(id_khoa)
+        $('.matcat').css("display",'none')
+        if( id_khoa.length<13){
+            console.log("oki đpt")
+            let src_matcat='./static/images/trangcon/matcat/a1/'+id_khoa+'.webp'
+            $('.content-toanha.'+id_khoa).css("display",'block')
+            $('.matcat.'+id_khoa).css("display",'flex')
+        }else{
+            if(id_tang==null) {
+                    id_tang='tang1'
+                }
+            var elem =document.querySelector("."+id_tang+" .thangbo_open").style.display
+            if( elem =='none'){
+                $('.tongquan'+id_tang).css("display",'flex')
+            }
+            else{
+                $('.tongquan'+id_tang+'b').css("display",'flex')
+            }
+            
+        }
+
+        setTimeout(function(){ 
+            $('.1').find('.text-container-menu').css('color','#283352');
+            $('.tang.'+id_khoa).css( {'display': 'flex'});
+        }, 200);
+    });
+      // Back and zoom
+      $('.next-btn-khoa').click(function() {
+        $('.parent-menu-content').css( {'height': '85%'});
+        $('.next-btn-khoa').parent().find('.back-btn-khoa').css( {'opacity': '0'});
+        $('.next-btn-khoa').css( {'display': 'none'});
+        $('.next-btn-khoa1').css( {'display': 'block'});
+        $(this).parent().parent().addClass( "khoa_zoom" );
+        current_zoom=1;
+    })
+      $('.next-btn-khoa1').click(function() {
+            current_zoom=0;
+            $('.next-btn-khoa').css( {'display': 'block'});
+            $('.next-btn-khoa1').css( {'display': 'none'});
+            $('.parent-menu-content').css( {'height': '75%'});
+            $('.next-btn-khoa').parent().find('.back-btn-khoa').css( {'opacity': '1'});
+        $(this).parent().parent().removeClass( "khoa_zoom" );
+    })
+    ///
+    
+    $('.back-btn-khoa').click(function() {
+        if(id_tang==null) {
+            id_tang='tang1';
+        }
+        console.log(id_khoa)
+        $('.matcat.'+id_khoa).css( {'display': 'none'});
+        setTimeout(function(){ 
+            console.log(id_tang)
+            $('.'+id_khoa).css( {'display': 'none'});
+            $('.content-toanha.'+id_tang).css( {'display': 'block'});
+            let element= $('.tongquan').find('.text-container-menu')
+            $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+            $('.tongquan').css("border-bottom",'1px solid #E23C47')
+            element.css("color",'#E23C47')
+            setTimeout(function(){ 
+                var elem =document.querySelector("."+id_tang+" .thangbo_open").style.display
+                if( elem =='none'){
+                    $('.tongquan'+id_tang).css("display",'flex')
+                }
+                else{
+                    $('.tongquan'+id_tang+'b').css("display",'flex')
+                }
+            }, 10);
+        }, 10);
+    
+        $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+        if(current_zoom==1){
+            $(this).parent().parent().toggleClass( "khoa_zoom" );
+            current_zoom=0;
+        }else{
+            $(this).parent().parent().css( {'display': 'none'});
+            localStorage.removeItem("key");
+        }
+        
+    })
+    
+    $('#close-iframe').click(function() {
+      parent.window.$('#web').css( {'display': 'block'});
+        parent.window.$('#modal_a1').css( {'display': 'none'});
+        localStorage.removeItem("key");
+    })
+</script>
+
+</body>
+</html>

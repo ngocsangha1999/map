@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <title>PTIT MAP</title>
+    <link rel="stylesheet" href="./static/css/trangcon_mobile.css">
+</head>
+<style>
+
+.container-content-trangcon{
+    display: flex;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+<body>
+    <div class="modal fade" id="modal_vpmc" role="dialog" style="width:100vw;height:100vh;
+    background: url(/static/images/home/bg-trangcon.webp) no-repeat center top;
+    background-size: 100% auto;
+    overflow: hidden;">
+        <div class="modal-dialog" style="    width: 100vw;
+        overflow: hidden;
+        height: 100%;
+        top: 0;">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:100%;height:100%;position:absolute;overflow: hidden;">
+            <div class="mapcon">
+                <div class="header_back">
+                    <div class="icon_back">
+                        <a href="" id="close-iframe">
+                            <img  src="./static/images/home/home-btn-back.svg" alt="back" width="24px" height="24px">
+                        </a>
+                    </div>
+                    <div class="header-trangcon">Văn phòng một cửa</div>
+                    <img class="icon_search" src="./static/images/home/btn-search.svg" alt="">
+                </div>
+                <div class="matcat tongquanvpmc" style="display: flex;"><img src="./static/images/trangcon/matcat/vpmc/tongquanvpmc.png" alt=""></div>
+                <div class="matcat tang o1"><img src="./static/images/trangcon/matcat/vpmc/o1.png" alt=""></div>
+                <div class="matcat tang o5"><img src="./static/images/trangcon/matcat/vpmc/o5.png" alt=""></div>
+                <div class="matcat tang o6"><img src="./static/images/trangcon/matcat/vpmc/o6.png" alt=""></div>
+                <div class="matcat tang o91011"><img src="./static/images/trangcon/matcat/vpmc/o91011.png" alt=""></div>
+            </div>
+            <div class="content content-trangcon">
+                <div class="content-top-trangcon">
+                    <div class="container-content-trangcon">
+                       <div class="child-content-trangcon current-child-trangcon"style="min-width: 165px;" id="vpmc">Văn phòng Một cửa</div>
+                    </div>
+                </div>
+                <!-------------------------- VPMC------------------------ -->
+                <div class="content-bottom content-toanha vpmc" >
+                    <div class="title-content-bottom main-menu ">Văn phòng Một cửa</div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquanvpmc">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="o1">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Ô số 1</div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="o5">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Ô số 5</div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="o6">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Ô số 6</div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="o91011">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Ô số 9,10,11</div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+                    </div>
+                </div>
+                <!-- ---------Ô số 1------------- -->
+                <div class="content-bottom content-toanha trangcon o1" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Ô số 1
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Tư vấn, tuyển sinh</li>
+                                <li>Tiếp nhận yêu cầu, thắc mắc, kiến nghị liên quan tới chứng chỉ, văn bằng</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ---------Ô số 5------------- -->
+                <div class="content-bottom content-toanha trangcon o5" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Ô số 5
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Thủ tục hành chính, chế độ học tập đối với sinh viên (bảng điểm, ngừng học, thôi học, học lại, bảo lưu, kết quả học tập, rèn luyện, học bổng, học cải thiện điểm, đăng ký thi tốt nghiệp, xét tốt nghiệp; hoãn, chậm nộp học phí,….)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ---------Ô số 6------------- -->
+                <div class="content-bottom content-toanha trangcon o6" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Ô số 6
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Thủ tục hành chính, chế độ HSSV (giấy giới thiệu, giấy xác nhận, ưu tiên mua vé xe buýt, đơn xin cấp miễn giảm học phí, mượn phòng, các chế độ chính sách HSSV, học bổng, khen thưởng,…)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ---------Ô số 9------------- -->
+                <div class="content-bottom content-toanha trangcon o91011" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Ô số 9, 10, 11
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Thu nộp học phí, lệ phí; thanh toán chế độ học bổng, khen thưởng,…</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+<script> 
+    var id_tang=null;
+        // Xử lý các khoa
+    var id_khoa=null;
+    var current_zoom=0;
+    var add_state=0;
+    jQuery(document).ready(function($) {
+        if (window.history && window.history.pushState) {
+        $(window).on('popstate', function() {
+            id_tang=null;
+            id_khoa=null;
+            localStorage.removeItem("key");
+            parent.window.$('#web').css( {'display': 'block'});
+            parent.window.$('#modal_vpmc').css( {'display': 'none'});
+            add_state=0;
+        });
+        }
+        });
+    $(document).ready(function(){
+        runEffect() 
+    });
+    var runEffect = function() {
+        var elem = parent.window.document.getElementById("modal_vpmc");
+        var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("display");
+        if( theCSSprop =='block'){
+            if(add_state==0){
+                window.history.pushState('forward', null, '');
+                add_state=1;
+            }
+        }
+        setTimeout(function () {
+            runEffect();
+        },100)
+    }
+    ////
+   list_tang=document.querySelectorAll(".child-content-trangcon");
+   for (let i=0;i<list_tang.length;i++){
+     list_tang[i].onclick=function(){
+         localStorage.removeItem('key')
+        $('.content-toanha').css( {'display': 'none'});
+        id_tang=$(this).attr('id');
+        $('.'+id_tang).css( {'display': 'block'});
+     }
+   }
+    // Click icon search
+    $('.icon_search').click(function() {
+        parent.window.$('#modal_search').css( {'display': 'block'});
+        parent.window.$('#modal_vpmc').css( {'display': 'none'});
+    })
+
+
+    $('.menu_toanha').click(function() {
+        $('.tongquanvpmc').css( {'display': 'none'});
+        $(this).css('background-color','#FEF6F7');
+        let element= $(this).find('.text-container-menu')
+        element.css("color",'#E23C47')
+        id_khoa=$(this).attr('id');
+        console.log(id_khoa)
+        setTimeout(function(){ 
+            $('.menu_toanha').css('background-color','#FFF');
+            element.css("color",'#283352')
+            $('.'+id_khoa).css( {'display': 'block'});
+        }, 20);
+    });
+      // Back and zoom
+      $('.next-btn-khoa').click(function() {
+        $('.parent-menu-content').css( {'height': '85%'});
+        $('.next-btn-khoa').parent().find('.back-btn-khoa').css( {'opacity': '0'});
+        $('.next-btn-khoa').css( {'display': 'none'});
+        $('.next-btn-khoa1').css( {'display': 'block'});
+        $(this).parent().parent().addClass( "khoa_zoom" );
+        current_zoom=1;
+    })
+      $('.next-btn-khoa1').click(function() {
+            current_zoom=0;
+            $('.next-btn-khoa').css( {'display': 'block'});
+            $('.next-btn-khoa1').css( {'display': 'none'});
+            $('.parent-menu-content').css( {'height': '75%'});
+            $('.next-btn-khoa').parent().find('.back-btn-khoa').css( {'opacity': '1'});
+        $(this).parent().parent().removeClass( "khoa_zoom" );
+    })
+    
+    //
+    $('.back-btn-khoa').click(function() {
+        $('.'+id_khoa).css( {'display': 'none'});
+            $('.tongquanvpmc').css( {'display': 'flex'});
+            let element= $('.tongquan').find('.text-container-menu')
+            $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+            $('.tongquan').css("border-bottom",'1px solid #E23C47')
+            element.css("color",'#E23C47')
+
+        if(current_zoom==1){
+            $(this).parent().parent().toggleClass( "khoa_zoom" );
+            current_zoom=0;
+        }else{
+            $(this).parent().parent().css( {'display': 'none'});
+            localStorage.removeItem("key");
+        }
+        
+    })
+    $('.thangbo_close').click(function() {
+        $(this).css( {'display': 'none'});
+        $(this).parent().find(".thangbo_open").css( {'display': 'block'});
+    })
+    $('.thangbo_open').click(function() {
+        $(this).css( {'display': 'none'});
+        $(this).parent().find(".thangbo_close").css( {'display': 'block'});
+    })
+
+    $('#close-iframe').click(function() {
+      parent.window.$('#web').css( {'display': 'block'});
+        parent.window.$('#modal_vpmc').css( {'display': 'none'});
+        localStorage.removeItem("key");
+    })
+</script>
+</body>

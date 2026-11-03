@@ -1,0 +1,835 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="preload" href="./static/images/map/thangbo_close.svg" as="image" type="image/png">
+    <link rel="stylesheet" href="./static/css/trangcon_mobile.css">
+</head>
+<style>
+
+.container-content-trangcon{
+    display: flex;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+<body>
+    <div class="modal fade" id="modal_a3" role="dialog" style="width:100vw;height:100vh;
+    background-size: 100% auto;
+    background: url(/static/images/home/bg-trangcon.webp) no-repeat center top;
+    overflow: hidden;">
+    <div class="modal-dialog" style="    width: 100vw;
+    overflow: hidden;
+    height: 100%;
+    top: 0;">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:100%;height:100%;position:absolute;overflow: hidden;">
+            <div class="mapcon">
+                <div class="header_back">
+                    <div class="icon_back">
+                        <a href="" id="close-iframe">
+                            <img  src="./static/images/home/home-btn-back.svg" alt="back" width="24px" height="24px">
+                        </a>
+                    </div>
+                    <div class="header-trangcon" >Tòa Nhà A3</div>
+                    <div class="input-search-header" style="display: none;">
+                        <input id="input_search" type="text" placeholder="Tìm địa chỉ phòng ban, khoa">
+                        <div class="search_recommend" id="result"></div>
+                    </div>
+                    <img class="icon_search" src="./static/images/home/btn-search.svg" alt="">
+                </div>
+                <div class="matcat tang1 tongquantang1" style="display: flex;"><img src="./static/images/trangcon/matcat/a3/tongquantang1.png" alt=""></div>
+                <div class="matcat tang1 tongquantang1b"><img src="./static/images/trangcon/matcat/a3/tongquantang1b.png" alt=""></div>
+                <div class="matcat tang tttttv"><img src="./static/images/trangcon/matcat/a3/tttttv.png" alt=""></div>
+                <div class="matcat tang pdoc"><img src="./static/images/trangcon/matcat/a3/pdoc.png" alt=""></div>
+                <div class="matcat tang data"><img src="./static/images/trangcon/matcat/a3/data.png" alt=""></div>
+                <div class="matcat tang sanha3"><img src="./static/images/trangcon/matcat/a3/sanha3.png" alt=""></div>
+                <div class="matcat tang tongquantang2"><img src="./static/images/trangcon/matcat/a3/tongquantang2.png" alt=""></div>
+                <div class="matcat tang tongquantang2b"><img src="./static/images/trangcon/matcat/a3/tongquantang2b.png" alt=""></div>
+
+                <div class="matcat tang 201a"><img src="./static/images/trangcon/matcat/a3/201a.png" alt=""></div>
+                <div class="matcat tang 201b"><img src="./static/images/trangcon/matcat/a3/201b.png" alt=""></div>
+                <div class="matcat tang 202"><img src="./static/images/trangcon/matcat/a3/202.png" alt=""></div>
+                <div class="matcat tang pngv"><img src="./static/images/trangcon/matcat/a3/pngv.png" alt=""></div>
+                <div class="matcat tang 204"><img src="./static/images/trangcon/matcat/a3/204.png" alt=""></div>
+                <div class="matcat tang 205"><img src="./static/images/trangcon/matcat/a3/205.png" alt=""></div>
+                <div class="matcat tang 206"><img src="./static/images/trangcon/matcat/a3/206.png" alt=""></div>
+                <div class="matcat tang 207"><img src="./static/images/trangcon/matcat/a3/207.png" alt=""></div>
+                <div class="matcat tang 208"><img src="./static/images/trangcon/matcat/a3/208.png" alt=""></div>
+
+                <div class="matcat tang tongquantang3"><img src="./static/images/trangcon/matcat/a3/tongquantang3.png" alt=""></div>
+                <div class="matcat tang tongquantang3b"><img src="./static/images/trangcon/matcat/a3/tongquantang3b.png" alt=""></div>
+                <div class="matcat tang 303"><img src="./static/images/trangcon/matcat/a3/303.png" alt=""></div>
+                <div class="matcat tang 304"><img src="./static/images/trangcon/matcat/a3/304.png" alt=""></div>
+                <div class="matcat tang 305"><img src="./static/images/trangcon/matcat/a3/305.png" alt=""></div>
+                <div class="matcat tang 306"><img src="./static/images/trangcon/matcat/a3/306.png" alt=""></div>
+                <div class="matcat tang pngv3"><img src="./static/images/trangcon/matcat/a3/pngv3.png" alt=""></div>
+                <div class="matcat tang 308"><img src="./static/images/trangcon/matcat/a3/308.png" alt=""></div>
+                <div class="matcat tang 309"><img src="./static/images/trangcon/matcat/a3/309.png" alt=""></div>
+                <div class="matcat tang 311"><img src="./static/images/trangcon/matcat/a3/311.png" alt=""></div>
+
+                <div class="matcat tang tongquantang4"><img src="./static/images/trangcon/matcat/a3/tongquantang4.png" alt=""></div>
+                <div class="matcat tang tongquantang4b"><img src="./static/images/trangcon/matcat/a3/tongquantang4b.png" alt=""></div>
+                <div class="matcat tang 401"><img src="./static/images/trangcon/matcat/a3/401.png" alt=""></div>
+                <div class="matcat tang 402"><img src="./static/images/trangcon/matcat/a3/402.png" alt=""></div>
+                <div class="matcat tang 403"><img src="./static/images/trangcon/matcat/a3/403.png" alt=""></div>
+                <div class="matcat tang 404"><img src="./static/images/trangcon/matcat/a3/404.png" alt=""></div>
+                <div class="matcat tang 405"><img src="./static/images/trangcon/matcat/a3/405.png" alt=""></div>
+                <div class="matcat tang 406"><img src="./static/images/trangcon/matcat/a3/406.png" alt=""></div>
+                <div class="matcat tang 407"><img src="./static/images/trangcon/matcat/a3/407.png" alt=""></div>
+                <div class="matcat tang 408"><img src="./static/images/trangcon/matcat/a3/408.png" alt=""></div>
+                <div class="matcat tang 409"><img src="./static/images/trangcon/matcat/a3/409.png" alt=""></div>
+                <div class="matcat tang 411"><img src="./static/images/trangcon/matcat/a3/411.png" alt=""></div>
+                <div class="matcat tang 413"><img src="./static/images/trangcon/matcat/a3/413.png" alt=""></div>
+                <div class="matcat tang tongquantang5"><img src="./static/images/trangcon/matcat/a3/tongquantang5.png" alt=""></div>
+                <div class="matcat tang tongquantang5b"><img src="./static/images/trangcon/matcat/a3/tongquantang5b.png" alt=""></div>
+                <div class="matcat tang 501"><img src="./static/images/trangcon/matcat/a3/501.png" alt=""></div>
+                <div class="matcat tang 502"><img src="./static/images/trangcon/matcat/a3/502.png" alt=""></div>
+                <div class="matcat tang 503"><img src="./static/images/trangcon/matcat/a3/503.png" alt=""></div>
+                <div class="matcat tang 504"><img src="./static/images/trangcon/matcat/a3/504.png" alt=""></div>
+                <div class="matcat tang 505"><img src="./static/images/trangcon/matcat/a3/505.png" alt=""></div>
+                <div class="matcat tang 506"><img src="./static/images/trangcon/matcat/a3/506.png" alt=""></div>
+                <div class="matcat tang 507a"><img src="./static/images/trangcon/matcat/a3/507a.png" alt=""></div>
+                <div class="matcat tang 507b"><img src="./static/images/trangcon/matcat/a3/507b.png" alt=""></div>
+                <div class="matcat tang 508"><img src="./static/images/trangcon/matcat/a3/508.png" alt=""></div>
+                <div class="matcat tang 509"><img src="./static/images/trangcon/matcat/a3/509.png" alt=""></div>
+                <div class="matcat tang 511"><img src="./static/images/trangcon/matcat/a3/511.png" alt=""></div>
+                <div class="matcat tang tongquantang6"><img src="./static/images/trangcon/matcat/a3/tongquantang6.png" alt=""></div>
+                <div class="matcat tang tongquantang6b"><img src="./static/images/trangcon/matcat/a3/tongquantang6b.png" alt=""></div>
+                <div class="matcat tang 601"><img src="./static/images/trangcon/matcat/a3/601.png" alt=""></div>
+                <div class="matcat tang 601a"><img src="./static/images/trangcon/matcat/a3/601a.png" alt=""></div>
+                <div class="matcat tang 601b"><img src="./static/images/trangcon/matcat/a3/601b.png" alt=""></div>
+                <div class="matcat tang 602"><img src="./static/images/trangcon/matcat/a3/602.png" alt=""></div>
+                <div class="matcat tang 604"><img src="./static/images/trangcon/matcat/a3/604.png" alt=""></div>
+                <div class="matcat tang 605"><img src="./static/images/trangcon/matcat/a3/605.png" alt=""></div>
+                <div class="matcat tang 606"><img src="./static/images/trangcon/matcat/a3/606.png" alt=""></div>
+                <div class="matcat tang 607"><img src="./static/images/trangcon/matcat/a3/607.png" alt=""></div>
+                <div class="matcat tang 608"><img src="./static/images/trangcon/matcat/a3/608.png" alt=""></div>
+                <div class="matcat tang 609"><img src="./static/images/trangcon/matcat/a3/609.png" alt=""></div>
+                <div class="matcat tang 611"><img src="./static/images/trangcon/matcat/a3/611.png" alt=""></div>
+            </div>
+            <div class="content content-trangcon">
+                <div class="content-top-trangcon">
+                    <div class="container-content-trangcon">
+                       <div class="child-content-trangcon current-child-trangcon" id="tang1">Tầng 1</div>
+                       <div class="child-content-trangcon" id="tang2">Tầng 2</div>
+                       <div class="child-content-trangcon" id="tang3">Tầng 3</div>
+                       <div class="child-content-trangcon" id="tang4">Tầng 4</div>
+                       <div class="child-content-trangcon" id="tang5">Tầng 5</div>
+                       <div class="child-content-trangcon" id="tang6">Tầng 6</div>
+                       <div class="child-content-trangcon " style="max-width: 0px;
+                       min-width: 0px;"></div>
+                    </div>
+                </div>
+                <!-------------------------- Tầng 1------------------------ -->
+                <div class="content-bottom content-toanha tang1" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 1</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang1">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="data">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Data Center</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha " id="sanha3">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Sảnh tòa nhà A3</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha " id="pdoc">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Phòng đọc</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha 1" id="tttttv">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Trung tâm thông tin thư viện</div>
+                                <img src="./static/images/map/icon/btn-next.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+                    </div>
+                </div>
+                <!-------------------------- Tầng 2------------------------ -->
+                <div class="content-bottom content-toanha tang tang2" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 2</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang2">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="201a">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.1a</div> 
+                                    <div class="name-phong">Phòng 201a</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="201b">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.1b</div> 
+                                    <div class="name-phong">Phòng 201b</div>
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="202">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.2</div> 
+                                    <div class="name-phong">Phòng 202</div>
+                                </div>                               
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="pngv">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.3</div> 
+                                    <div class="name-phong">Phòng Nghỉ giáo viên</div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="204">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.4</div> 
+                                    <div class="name-phong">Phòng 204</div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="205">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.5</div> 
+                                    <div class="name-phong">Phòng 205</div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="206">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.6</div> 
+                                    <div class="name-phong">Phòng 206</div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="207">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.7</div> 
+                                    <div class="name-phong">Phòng 207</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="208">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">2.8</div> 
+                                    <div class="name-phong">Phòng 208</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+
+                    </div>
+                </div>
+                <!-------------------------- Tầng 3------------------------ -->
+                <div class="content-bottom content-toanha tang tang3" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 3</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang3">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="303">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">3.3</div> 
+                                    <div class="name-phong">Phòng 303</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="304">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                        <div class="id-phong">3.4</div> 
+                                        <div class="name-phong">Phòng 304</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="305">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">3.5</div> 
+                                    <div class="name-phong">Phòng 305</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="306">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                        <div class="id-phong">3.6</div> 
+                                        <div class="name-phong">Phòng 306</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="pngv3">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                        <div class="id-phong">3.7</div> 
+                                        <div class="name-phong">Phòng Nghỉ Giáo viên</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="308">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">3.8</div> 
+                                    <div class="name-phong">Phòng 308</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha"  id="309">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">3.9</div> 
+                                    <div class="name-phong">Phòng 309</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="311">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">3.11</div> 
+                                    <div class="name-phong">Phòng 311</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+
+                    </div>
+                </div>
+                <!-------------------------- Tầng 4------------------------ -->
+                <div class="content-bottom content-toanha tang tang4" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 4</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang4">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="401">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">
+                                    <div class="id-phong">4.1</div> 
+                                    <div class="name-phong">Phòng 401</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="402">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.2</div> <div class="name-phong">Phòng 402</div></div> 
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="403">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.3</div> <div class="name-phong">Phòng 403</div></div>                               
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="404">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.4</div> <div class="name-phong">Phòng 404</div></div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="405">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.5</div> <div class="name-phong">Phòng 405</div></div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="406">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.6</div> <div class="name-phong">Phòng 406</div></div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="407">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.7</div> <div class="name-phong">Phòng 407</div></div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="408">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.8</div> <div class="name-phong">Phòng 408</div></div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="409">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.9</div> <div class="name-phong">Phòng 409</div></div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="411">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.11</div> <div class="name-phong">Phòng 411</div></div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="413">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">4.13</div> <div class="name-phong">Phòng 413</div></div>
+                            </div>
+                        </div>
+                        <div class="end-content" ></div>
+
+                    </div>
+                </div>
+                <!-------------------------- Tầng 5------------------------ -->
+                <div class="content-bottom content-toanha tang tang5" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 5</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang5">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="501">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">5.1</div> <div class="name-phong">Phòng 501</div></div>
+                            </div>
+                        </div>
+                            <div class="menu-content-bottom menu_toanha" id="502">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.2</div> <div class="name-phong">Phòng 502</div></div> 
+                                </div>
+                            </div>
+                            <div class="menu-content-bottom menu_toanha" id="503">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.3</div> <div class="name-phong">Phòng 503</div></div> 
+                                </div>
+                            </div> 
+                            <div class="menu-content-bottom menu_toanha" id="504">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.4</div> <div class="name-phong">Phòng 504</div></div> 
+                                </div>
+                            </div>
+                            <div class="menu-content-bottom menu_toanha" id="505">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.5</div> <div class="name-phong">Phòng 505</div></div> 
+                                </div>
+                            </div>
+                            <div class="menu-content-bottom menu_toanha" id="506">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.6</div> <div class="name-phong">Phòng 506</div></div> 
+                                </div>
+                            </div>
+                            <div class="menu-content-bottom menu_toanha" id="507a">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.7a</div> <div class="name-phong">Phòng 507a</div></div> 
+                                </div>
+                            </div>
+                            <div class="menu-content-bottom menu_toanha" id="507b">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.7b</div> <div class="name-phong">Phòng 507b</div></div> 
+                                </div>
+                            </div> 
+                            <div class="menu-content-bottom menu_toanha" id="508">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.8</div> <div class="name-phong">Phòng 508</div></div> 
+                                </div>
+                            </div>
+                            <div class="menu-content-bottom menu_toanha" id="509">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.9</div> <div class="name-phong">Phòng 509</div></div> 
+                                </div>
+                            </div>
+                            <div class="menu-content-bottom menu_toanha" id="511">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">5.11</div> <div class="name-phong">Phòng 511</div></div>
+                                </div>
+                            </div>
+                        <div class="end-content" ></div>
+
+                    </div>
+                </div>
+               <!-------------------------- Tầng 6------------------------ -->
+                <div class="content-bottom content-toanha tang tang6" >
+                    <div class="title-content-bottom main-menu ">
+                        <div class="title_tang">Tầng 6</div>
+                        <div class="thangbo">Thang bộ</div>
+                        <img class="thangbo_close" src="/static/images/map/thangbo_close.svg" alt="">
+                        <img class="thangbo_open" src="/static/images/map/thangbo_open.svg" alt="" style="display: none;">
+                    </div>
+                    <div class="parent-menu-content main-menu ">
+                        <div class="menu-content-bottom menu_toanha tongquan" id="tongquantang6">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu">Tổng quan</div>
+                            </div>
+                        </div>
+                        <div class="menu-content-bottom menu_toanha" id="601">
+                            <div class="container-menu-bottom">
+                                <div class="text-container-menu"><div class="id-phong">6.1</div> <div class="name-phong">Phòng 601</div></div>
+                            </div> 
+                        </div>
+                            <div class="menu-content-bottom menu_toanha" id="601a">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.1a</div> <div class="name-phong">Phòng 601a</div></div>
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="601b">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.1b</div> <div class="name-phong">Phòng 601b</div></div>
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="602">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.2</div> <div class="name-phong">Phòng 602</div></div> 
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="604">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.4</div> <div class="name-phong">Phòng 604</div></div> 
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="605">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.5</div> <div class="name-phong">Phòng 605</div></div> 
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="606">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.6</div> <div class="name-phong">Phòng 606</div></div> 
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="607">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.7</div> <div class="name-phong">Phòng 607</div></div> 
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="608">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.8</div> <div class="name-phong">Phòng 608</div></div> 
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="609">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.9</div> <div class="name-phong">Phòng 609</div></div> 
+                                </div>
+                            </div>   
+                            <div class="menu-content-bottom menu_toanha" id="611">
+                                <div class="container-menu-bottom">
+                                    <div class="text-container-menu"><div class="id-phong">6.11</div> <div class="name-phong">Phòng 611</div></div>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="end-content" ></div>
+
+                </div>
+                <!-- ---------Trung tâm thông tin thư viện------------- -->
+                <div class="content-bottom content-toanha trangcon tttttv" >
+                    <div class="title-content-bottom title-floor"> 
+                        <img class="back-btn-khoa" src="./static/images/map/icon/btn-back.svg" alt="">
+                        <div class="descrip-content">
+                            Trung tâm Thông tin Thư viện
+                        </div>
+                        <img class="next-btn-khoa" src="./static/images/map/icon/btn-zoom-in.svg" alt="">
+                        <img class="next-btn-khoa1" src="./static/images/map/icon/btn-zoom-out.svg" style="display: none;" alt="">                    </div>
+                    <div  class="parent-menu-content">
+                        <div class="description-floor end-content">
+                            <ul>
+                                <li>Chức năng và nhiệm vụ: Trung tâm có chức năng quản lý chuyên môn, nghiệp vụ về thông tin – thư viện trong toàn Học viện; tổ chức và quản lý công tác thông tin – thư viện phục vụ hoạt động đào tạo và nghiên cứu khoa học tại Cơ sở Hà Đông.</li>
+                                <li>Quản lý, tổ chức khai thác, sử dụng trang thiết bị thí nghiệm – thực hành do Học viện giao phục vụ hoạt động đào tạo, nghiên cứu khoa học tại Cơ sở Hà Đông.</li>
+                                <li>Xây dựng, quản lý và phát triển hệ thống mạng Internet, các ứng dụng công nghệ thông tin phục vụ cho công tác quản lý, đào tạo và nghiên cứu khoa học tại Khối Quản lý và Đào tạo phía Bắc (Khối).</li>
+                                <li>Địa chỉ: Tầng 1,  nhà A1,A3 CSHĐ. Điện thoại: 024.38549 352</li>
+                                <li><a href="https://portal.ptit.edu.vn/tttv/">Chi tiết</a> </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script> 
+    var id_tang=null;
+        // Xử lý các khoa
+    var id_khoa=null;
+    var current_zoom=0;
+    var add_state=0;
+    var loadtang1=0;
+    jQuery(document).ready(function($) {
+        if (window.history && window.history.pushState) {
+        $(window).on('popstate', function() {
+            id_tang=null;
+            id_khoa=null;
+            localStorage.removeItem("key");
+            parent.window.$('#web').css( {'display': 'block'});
+            parent.window.$('#modal_a3').css( {'display': 'none'});
+            add_state=0;
+        });
+        }
+        });
+    $(document).ready(function(){
+        runEffect() 
+    });
+    var runEffect = function() {
+        var list_class=localStorage.getItem("key");
+        var load_status=localStorage.getItem("load");
+        var elem = parent.window.document.getElementById("modal_a3");
+        var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("display");
+        if( theCSSprop =='block'){
+            if(add_state==0){
+                window.history.pushState('forward', null, '');
+                add_state=1;
+            }
+            if(load_status==1){
+                if(list_class!= null){
+                    list_class=list_class.split(" ");
+                    id_tang=list_class[3]
+                    console.log(id_khoa)
+                    var list_tang=document.querySelectorAll(".child-content-trangcon");
+                    for (let i=0;i<list_tang.length;i++){
+                        list_tang[i].className='child-content-trangcon';
+                    }
+                    $('.matcat.tongquantang1').css( {'display': 'none'});
+                    setTimeout(function(){ 
+                        if(!$('#'+id_tang).hasClass('current-child-trangcon')){
+                            $('#'+id_tang).addClass('current-child-trangcon');
+                        }
+                        if(id_khoa!=null){
+                            $('.matcat.'+id_khoa).css( {'display': 'none'});
+                        }
+                        
+                        $('.content-toanha').css( {'display': 'none'});
+                        $('.content-bottom.'+id_tang).css( {'display': 'block'});
+                        $('.content-bottom.'+list_class[4]).css( {'display': 'block'});
+                        $('.matcat.'+list_class[4]).css( {'display': 'flex'});
+                        localStorage.removeItem('key')                     
+                    }, 10);
+                }
+                else{
+                    if(id_tang==null){
+                        id_tang='tang1'
+                        $('.content-toanha.tang1').css( {'display': 'block'});
+                        if(!$('#tang1').hasClass('current-child-trangcon')){
+                            $('#tang1').addClass('current-child-trangcon');
+                        }
+                        if(loadtang1==0){
+                            $('#tongquantang1').find('.text-container-menu').css("color",'#E23C47')
+                            $('#tongquantang1').css("border-bottom",'1px solid #E23C47') 
+                            loadtang1=1;
+                        }
+
+                    }
+                    else{
+                        $('.content-toanha.'+id_tang).css( {'display': 'block'});
+                        if(!$('#'+id_tang).hasClass('current-child-trangcon')){
+                            $('#'+id_tang).addClass('current-child-trangcon');
+                        }
+                    }
+                } 
+            }  
+        }
+        setTimeout(function () {
+            runEffect();
+        },100)
+    }
+    
+    ///
+// var a=[]
+// var all_phong=document.querySelectorAll(".menu_toanha");
+// for (let i=0;i<all_phong.length;i++){
+//     a.push(all_phong[i].id)
+// }
+// console.log(a)
+
+    ////
+   list_tang=document.querySelectorAll(".child-content-trangcon");
+   for (let i=0;i<list_tang.length;i++){
+     list_tang[i].onclick=function(){
+        $('.matcat').css("display",'none')
+         localStorage.removeItem('key')
+        $('.content-toanha').css( {'display': 'none'});
+        id_tang=$(this).attr('id');
+        console.log(id_tang)
+        $('.content-toanha.'+id_tang).css( {'display': 'block'});
+
+        let element= $('.tongquan').find('.text-container-menu')
+        $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+        $('.tongquan').css("border-bottom",'1px solid #E23C47')
+        element.css("color",'#E23C47')
+        setTimeout(function(){ 
+            var elem =document.querySelector("."+id_tang+" .thangbo_open").style.display
+            if( elem =='none'){
+                $('.tongquan'+id_tang).css("display",'flex')
+            }
+            else{
+                $('.tongquan'+id_tang+'b').css("display",'flex')
+            }
+        }, 10);
+
+       let j=0;
+       while(j<list_tang.length){
+         list_tang[j++].className='child-content-trangcon';
+       }
+       list_tang[i].className='child-content-trangcon current-child-trangcon';
+     }
+   }
+    // Click icon search
+    $('.icon_search').click(function() {
+        parent.window.$('#modal_search').css( {'display': 'block'});
+        parent.window.$('#modal_a3').css( {'display': 'none'});
+    })
+    
+    function clicktothangbo(){
+        $('.text-container-menu').css('color','#283352');
+        let element= $('.tongquan').find('.text-container-menu')
+        $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+        $('.tongquan').css("border-bottom",'1px solid #E23C47')
+        element.css("color",'#E23C47')
+        $('.matcat').css( {'display': 'none'});
+        if(id_tang==null) {
+            id_tang='tang1';
+        }
+    }
+    $('.thangbo_close').click(function() {
+        clicktothangbo()
+        $(this).css( {'display': 'none'});
+        $(this).parent().find(".thangbo_open").css( {'display': 'block'});
+        $('.tongquan'+id_tang+'b').css("display",'flex')
+    })
+    $('.thangbo_open').click(function() {
+        clicktothangbo()
+        $(this).css( {'display': 'none'});
+        $(this).parent().find(".thangbo_close").css( {'display': 'block'});
+        console.log(id_tang)
+        $('.tongquan'+id_tang).css("display",'flex')
+    })
+
+    /// xwr lys click phongf
+    $('.menu_toanha').click(function() {
+        let element= $(this).find('.text-container-menu')
+        $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+        $('.text-container-menu').css('color','#283352');
+        $(this).css("border-bottom",'1px solid #E23C47')
+        element.css("color",'#E23C47')
+
+        id_khoa=$(this).attr('id');
+        console.log(id_khoa)
+        $('.matcat').css("display",'none')
+        if( id_khoa.length<12){
+            let src_matcat='./static/images/trangcon/matcat/a3/'+id_khoa+'.png'
+            $('.content-toanha.'+id_khoa).css("display",'block')
+            $('.matcat.'+id_khoa).css("display",'flex')
+        }else{
+            var elem =document.querySelector("."+id_tang+" .thangbo_open").style.display
+            if( elem =='none'){
+                $('.tongquan'+id_tang).css("display",'flex')
+            }
+            else{
+                $('.tongquan'+id_tang+'b').css("display",'flex')
+            }
+            
+        }
+
+        setTimeout(function(){ 
+            $('.1').find('.text-container-menu').css('color','#283352');
+            $('.tang.'+id_khoa).css( {'display': 'flex'});
+        }, 200);
+    });
+      // Back and zoom
+      $('.next-btn-khoa').click(function() {
+        $('.parent-menu-content').css( {'height': '85%'});
+        $('.next-btn-khoa').parent().find('.back-btn-khoa').css( {'opacity': '0'});
+        $('.next-btn-khoa').css( {'display': 'none'});
+        $('.next-btn-khoa1').css( {'display': 'block'});
+        $(this).parent().parent().addClass( "khoa_zoom" );
+        current_zoom=1;
+    })
+      $('.next-btn-khoa1').click(function() {
+            current_zoom=0;
+            $('.next-btn-khoa').css( {'display': 'block'});
+            $('.next-btn-khoa1').css( {'display': 'none'});
+            $('.parent-menu-content').css( {'height': '75%'});
+            $('.next-btn-khoa').parent().find('.back-btn-khoa').css( {'opacity': '1'});
+        $(this).parent().parent().removeClass( "khoa_zoom" );
+    })
+    ///
+    
+    $('.back-btn-khoa').click(function() {
+        if(id_tang==null) {
+            id_tang='tang1';
+        }
+        console.log(id_khoa)
+        $('.matcat').css( {'display': 'none'});
+        setTimeout(function(){ 
+            console.log(id_tang)
+            $('.'+id_khoa).css( {'display': 'none'});
+            $('.content-toanha.'+id_tang).css( {'display': 'block'});
+            let element= $('.tongquan').find('.text-container-menu')
+            $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+            $('.tongquan').css("border-bottom",'1px solid #E23C47')
+            element.css("color",'#E23C47')
+            setTimeout(function(){ 
+                var elem =document.querySelector("."+id_tang+" .thangbo_open").style.display
+                if( elem =='none'){
+                    $('.tongquan'+id_tang).css("display",'flex')
+                }
+                else{
+                    $('.tongquan'+id_tang+'b').css("display",'flex')
+                }
+            }, 10);
+        }, 10);
+    
+        $('.menu_toanha').css('border-bottom','1px solid #E4E9F2');
+        if(current_zoom==1){
+            $(this).parent().parent().toggleClass( "khoa_zoom" );
+            current_zoom=0;
+        }else{
+            $(this).parent().parent().css( {'display': 'none'});
+            localStorage.removeItem("key");
+        }
+        
+    })
+    
+    $('#close-iframe').click(function() {
+      parent.window.$('#web').css( {'display': 'block'});
+        parent.window.$('#modal_a3').css( {'display': 'none'});
+        localStorage.removeItem("key");
+    })
+</script>
+</body>
+</html>
