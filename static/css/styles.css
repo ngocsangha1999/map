@@ -736,11 +736,13 @@ footer a:hover {
     animation-delay: 0.3s;
 }
 
+/* pin.png 162x251: cao 52px, đầu nhọn chạm vòng sáng (tâm vòng cách gốc 25px) */
 .prlx-ctn .over .pop {
     position: absolute;
     transform: scale(0);
-    margin-top: -96px;
-    margin-left: -20px;
+    transform-origin: 50% 100%;
+    margin-top: -80px;
+    margin-left: -12px;
     transition: all .2s;
     -moz-transition: all .2s;
     -webkit-transition: all .2s;
@@ -755,7 +757,8 @@ footer a:hover {
 }
 
 .prlx-ctn .pop img {
-    height: 64px;
+    display: block;
+    height: 52px;
 }
 
 .prlx-ctn .over .info {

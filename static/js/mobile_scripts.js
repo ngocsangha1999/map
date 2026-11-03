@@ -36,6 +36,12 @@ var runEffect = function() {
     check_session=localStorage.getItem("check_icon")
     if(check_session!="1"){
         console.log(check_session)
+        // bỏ qua ghim đang ẩn hoặc thuộc tab khác
+        var skipped = 0;
+        while ((objArr[objCount].css('display') == 'none' || objArr[objCount].hasClass('other-tab')) && skipped < objArr.length) {
+            objCount = (objCount + 1) % objArr.length;
+            skipped++;
+        }
         var obj = objArr[objCount];
         for(let i=0;i<objArr.length;i++){
             if(i!=objCount){
