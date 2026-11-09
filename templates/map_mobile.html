@@ -599,10 +599,11 @@
     .place-audio{
         display: block;
         width: calc(100% - 32px);
-        margin: 12px 16px 0;
+        margin: 12px 16px;
     }
-    #place-text{
-        white-space: pre-line;
+    #place-text p{
+        margin: 0;
+        text-indent: 1.5em;
     }
     #floor-ttkn .typewriter1::before{
         top:-8px;
@@ -854,7 +855,8 @@
         $('#place-audio')[0].pause();
         if (p.audio) $('#place-audio').attr('src', p.audio).show();
         else $('#place-audio').removeAttr('src').hide();
-        $('#place-text').text(p.text);
+        // mỗi dòng trong text là một đoạn, tách thành <p> để thụt đầu dòng
+        $('#place-text').empty().append(p.text.split('\n').map(function(s) { return $('<p>').text(s); }));
         $('.tab-panel').hide();
         // ghi một bước lịch sử để nút Back của điện thoại quay về bản đồ thay vì rời trang
         if (!$('.content').hasClass('detail-open')) history.pushState({ place: 1 }, '');
