@@ -385,6 +385,9 @@
     .over.place-pin.other-tab {
         opacity: .6;
     }
+    .over.place-pin.same-spot {
+        display: none;
+    }
     .people {
         z-index: 14;
     }
@@ -572,6 +575,20 @@
         line-height: 16px;
         color: #7988A4;
     }
+    .place-model{
+        display: block;
+        width: 100%;
+        height: 60vw;
+        border: none;
+    }
+    .place-audio{
+        display: block;
+        width: calc(100% - 32px);
+        margin: 12px 16px 0;
+    }
+    #place-text{
+        white-space: pre-line;
+    }
     #floor-ttkn .typewriter1::before{
         top:-8px;
         bottom: 0;
@@ -622,6 +639,8 @@
             </div>
             <div class="parent-menu-content">
                 <img class="place-image" id="place-image" src="" alt="">
+                <iframe class="place-model" id="place-model" style="display:none" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
+                <audio class="place-audio" id="place-audio" controls preload="none" style="display:none"></audio>
                 <div class="description-floor end-content" id="place-text"></div>
             </div>
         </div>
@@ -658,7 +677,7 @@
     </div>
 </body>
 <script src="./static/js/owl.carousel.min.js "></script>
-<script src="./static/js/mobile_places.js?v=1"></script>
+<script src="./static/js/mobile_places.js?v=6"></script>
 <script src="./static/js/mobile_scripts.js?v=3"></script>
 
 <script>
@@ -740,7 +759,7 @@
                     + '<img src="./static/images/map/icon/btn-next.svg" alt=""></div></div>';
                 let left = (p.x / 100 * ART_SRC_WIDTH - ART_CROP_LEFT) / ART_CROP_WIDTH * 100;
                 let bottom = ART_BOTTOM_VW + (100 - p.y) / 100 * ART_HEIGHT_VW;
-                pins += '<div class="over people btnFile place-pin' + (tab.id != current_tab ? ' other-tab' : '') + '" data-tab="' + tab.id + '" data-place="' + p.id + '"'
+                pins += '<div class="over people btnFile place-pin' + (tab.id != current_tab ? ' other-tab' : '') + '" data-tab="' + tab.id + '" data-place="' + p.id + '" data-pos="' + p.x + ',' + p.y + '"'
                     // vòng sáng của ghim nằm cao hơn gốc 25px, dời xuống để vòng trùng đúng vị trí
                     + ' style="left:' + left.toFixed(2) + 'vw;bottom:calc(' + bottom.toFixed(2) + 'vw - 25px);">'
                     + '<div class="typewriter"><h6>' + p.name + '</h6></div>'
@@ -751,6 +770,7 @@
         });
         $('#tab-panels').html(panels);
         $('.map').append(pins);
+        selectTab(current_tab);
     }
 
     function resetPins() {
@@ -762,8 +782,17 @@
 
     function selectTab(tab_id) {
         current_tab = tab_id;
+        let taken = {};
+        $('.place-pin[data-tab="' + tab_id + '"]').each(function() { taken[$(this).data('pos')] = true; });
         $('.place-pin').each(function() {
-            $(this).toggleClass('other-tab', $(this).data('tab') != tab_id);
+            let other = $(this).data('tab') != tab_id;
+            $(this).toggleClass('other-tab', other);
+            $(this).removeClass('same-spot');
+            if (!other) return;
+            // công trình đã có ghim (ưu tiên tab đang chọn) thì ẩn ghim trùng chỗ, tránh chồng nhau
+            let pos = $(this).data('pos');
+            $(this).toggleClass('same-spot', !!taken[pos]);
+            taken[pos] = true;
         });
         $('.tab-circle').removeClass('current-circle');
         $('.tab-circle .title-menu').css('color', '#7988A4');
@@ -796,6 +825,19 @@
 
         $('#place-name').text(p.name);
         $('#place-image').attr({ src: p.image, alt: p.name });
+        // có link Sketchfab thì nhúng mô hình 3D thay cho ảnh
+        let m = (p.model3d || '').match(/([0-9a-f]{32})\/?$/);
+        if (m) {
+            $('#place-model').attr({ src: 'https://sketchfab.com/models/' + m[1] + '/embed?autostart=1&ui_hint=0', title: p.name + ' 3D' }).show();
+            $('#place-image').hide();
+        } else {
+            $('#place-model').attr('src', 'about:blank').hide();
+            $('#place-image').show();
+        }
+        // dừng audio của điểm trước, có file thuyết minh thì hiện trình phát
+        $('#place-audio')[0].pause();
+        if (p.audio) $('#place-audio').attr('src', p.audio).show();
+        else $('#place-audio').removeAttr('src').hide();
         $('#place-text').text(p.text);
         $('.tab-panel').hide();
         $('.place-detail').show();
@@ -806,6 +848,10 @@
     $('.tab-circle').click(function() { showTab($(this).data('tab')); });
     $('#tab-panels').on('click', '.place-item', function() { showPlace($(this).data('place')); });
     $('.map').on('click', '.place-pin', function() { showPlace($(this).data('place')); });
-    $('.place-back').click(function() { showTab(current_tab); });
+    $('.place-back').click(function() {
+        $('#place-audio')[0].pause();
+        $('#place-model').attr('src', 'about:blank');
+        showTab(current_tab);
+    });
 </script>
 </html>
