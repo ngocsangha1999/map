@@ -596,6 +596,27 @@
         height: 80vw;
         border: none;
     }
+    /* trang thuyết minh theo ảnh mở đè lên bản đồ để quay lại không phải tải lại trang */
+    .slides-frame{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: #FCFDFE;
+        z-index: 3000;
+    }
+    .place-slides{
+        display: block;
+        margin: 0 16px 12px;
+        padding: 10px;
+        border: 1px solid #E23C47;
+        border-radius: 20px;
+        color: #E23C47;
+        font-size: 15px;
+        text-align: center;
+    }
     .place-audio{
         display: block;
         width: calc(100% - 32px);
@@ -657,6 +678,7 @@
                 <img class="place-image" id="place-image" src="" alt="">
                 <iframe class="place-model" id="place-model" style="display:none" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
                 <audio class="place-audio" id="place-audio" controls preload="none" style="display:none"></audio>
+                <a class="place-slides" id="place-slides" style="display:none">Nghe thuyết minh theo ảnh</a>
                 <div class="description-floor end-content" id="place-text"></div>
             </div>
         </div>
@@ -693,7 +715,7 @@
     </div>
 </body>
 <script src="./static/js/owl.carousel.min.js "></script>
-<script src="./static/js/mobile_places.js?v=6"></script>
+<script src="./static/js/mobile_places.js?v=8"></script>
 <script src="./static/js/mobile_scripts.js?v=3"></script>
 
 <script>
@@ -855,6 +877,9 @@
         $('#place-audio')[0].pause();
         if (p.audio) $('#place-audio').attr('src', p.audio).show();
         else $('#place-audio').removeAttr('src').hide();
+        // điểm có audio thì mở được trang thuyết minh theo ảnh
+        if (p.audio) $('#place-slides').attr('href', './thuyet_minh_mobile.html?place=' + p.id).show();
+        else $('#place-slides').hide();
         // mỗi dòng trong text là một đoạn, tách thành <p> để thụt đầu dòng
         $('#place-text').empty().append(p.text.split('\n').map(function(s) { return $('<p>').text(s); }));
         $('.tab-panel').hide();
@@ -884,10 +909,32 @@
             history.back();
         }
     });
+    $('#place-slides').click(function(e) {
+        e.preventDefault();
+        $('#place-audio')[0].pause();
+        // tạo iframe mới mỗi lần (gán src trước khi chèn) để không sinh thêm bước lịch sử
+        $('<iframe class="slides-frame" id="slides-frame" allow="autoplay" title="Thuyết minh theo ảnh">')
+            .attr('src', $(this).attr('href')).appendTo('body');
+        history.pushState({ place: 1, slides: 1 }, '');
+    });
+    function closeSlides() {
+        $('#slides-frame').remove();
+    }
+    // nút quay lại trong trang thuyết minh gửi tin nhắn ra đây
+    window.addEventListener('message', function(e) {
+        if (e.origin != location.origin || !e.data || e.data.type != 'close-slides') return;
+        closeSlides();
+        if (history.state && history.state.slides) {
+            skip_pop = true;
+            history.back();
+        }
+    });
     var skip_pop = false;
     $(window).on('popstate', function() {
         if (skip_pop) { skip_pop = false; return; }
-        if ($('.content').hasClass('detail-open')) closePlace();
+        // đang mở trang thuyết minh thì Back chỉ đóng nó, giữ nguyên trang chi tiết có 3D
+        if ($('#slides-frame').length) closeSlides();
+        else if ($('.content').hasClass('detail-open')) closePlace();
     });
 </script>
 </html>

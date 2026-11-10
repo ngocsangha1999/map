@@ -5,6 +5,9 @@
 // Một công trình có thể nằm ở nhiều tab (mỗi tuyến một bài thuyết minh riêng): dùng id khác nhau, cùng x, y.
 // model3d: link mô hình 3D trên Sketchfab (có thì hiện 3D thay cho ảnh).
 // audio: file thuyết minh lấy từ web thuyết minh số.
+// slides: ảnh cho trang thuyết minh theo ảnh, mỗi ảnh ứng với một đoạn của text
+// (thiếu thì dùng image; đoạn cuối mặc định lấy ảnh điểm kế tiếp trong tuyến).
+// cues: giây bắt đầu của từng đoạn trong audio; bỏ trống thì ước lượng theo độ dài chữ.
 var MOBILE_TABS = [
     {
         id: 'dong-lam',
@@ -35,6 +38,11 @@ var MOBILE_TABS = [
                 name: 'Miếu Bia',
                 x: 58.5, y: 33,
                 image: './static/images/places/mieu-bia.webp',
+                slides: [
+                    './static/images/places/mieu-bia.webp',
+                    './static/images/places/mieu-bia-tran-bia.webp',
+                    './static/images/places/nghi-mon-ngoai.webp'
+                ],
                 model3d: 'https://sketchfab.com/3d-models/bia-than-tich-5c56de6dd8dd49ab8a056bb7f85bfed5',
                 audio: 'https://thuyetminhsodenkimlien.vercel.app/audio/A-1-3-1-tam-bia-da-co-vn.mp3',
                 text: 'Rời giếng Ngọc, chúng ta bước vào không gian thâm nghiêm để chiêm ngưỡng tấm bia đá cổ vô giá mang tên “Cao Sơn đại vương thần từ bi minh tịnh tự”. Tấm bia này do quan Đại học sĩ Lê Tung soạn văn từ năm 1510 và được chính thức khắc đá vào năm Cảnh Hưng thứ 33 (năm 1772).\n'

@@ -37,6 +37,10 @@ def mobile():
 @app.route('/map_mobile.html', methods=['GET'])
 def map_mobile():
     return render_template('./map_mobile.html')
+@app.route('/thuyet_minh_mobile.html', methods=['GET'])
+def thuyet_minh_mobile():
+    return render_template('./thuyet_minh_mobile.html')
+
 @app.route('/a1_mobile.html', methods=['GET'])
 def a1_mobile():
     return render_template('./a1_mobile.html')
